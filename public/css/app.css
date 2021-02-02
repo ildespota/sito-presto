@@ -10011,10 +10011,13 @@ h3 {
   --white: white;
 }
 
+<<<<<<< HEAD
 .text-white {
   color: var(--white);
 }
 
+=======
+>>>>>>> 9007bf35ec2bfd44c040e01f51c5a2fda6fc2acf
 .masthead {
   height: 80vh;
   min-height: 500px;
