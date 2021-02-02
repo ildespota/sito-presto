@@ -1,23 +1,18 @@
-@extends('layouts.app')
+<x-layout
+    title="Homepage"
+>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+<header class="masthead mt-n5">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12 col-md-6 box">
+          <h1 class="category_title">Categoria</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui adipisci expedita corporis aperiam enim numquam vitae animi facilis odit, ad similique delectus ex a nostrum beatae modi amet repellat doloremque.</p>
+          <p class="lead">A great starter layout for a landing page</p>
+          <a class="btn btn-custom">Inserisci il tuo annuncio</a>
         </div>
+      </div>
     </div>
-</div>
-@endsection
+  </header>
+
+</x-layout>
