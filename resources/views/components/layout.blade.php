@@ -17,9 +17,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    <x-navbar/>
     <main>
         {{$slot}}
     </main>
+    <x-footer/>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
