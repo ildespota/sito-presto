@@ -35,6 +35,11 @@ class AnnouncementController extends Controller
      */
     public function store(Request $request)
     {
+        $announcement=Announcement::create([
+         'title'=>$request->title,
+         'description'=>$request->description,
+
+        ]);
         return redirect(route('home'))->with('status', 'Annuncio inserito correttamente');
     }
 
