@@ -22,3 +22,5 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/announcement/create', [AnnouncementController::class, 'create'])->name('announcement.create');
 
 Route::post('/announcement/store', [AnnouncementController::class, 'store'])->name('announcement.store');
+
+Route::get('/announcement/show/{announcement}', [HomeController::class, 'show'])->name('announcement.show');

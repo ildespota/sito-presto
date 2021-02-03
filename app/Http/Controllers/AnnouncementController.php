@@ -48,7 +48,7 @@ class AnnouncementController extends Controller
          'title'=>$request->title,
          'description'=>$request->description,
          'category_id'=>$request->category,
-
+         'price'=>$request->price,
         ]);
         return redirect(route('home'))->with('status', 'Annuncio inserito correttamente');
     }

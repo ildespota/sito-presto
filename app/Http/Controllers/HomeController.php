@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $announcements = Announcement::all()->take(-5)->sortDesc();
+        return view('home', compact('announcements'));
+    }
+
+    public function show(Announcement $announcement)
+    {
+        return view('announcements.detail', compact('announcement'));
     }
 }

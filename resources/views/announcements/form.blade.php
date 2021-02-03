@@ -13,7 +13,6 @@
                 <div class="form-group">
                     <label>Titolo</label>
                     <input type="text" name="title" class="form-control"  aria-describedby="titolo annuncio" placeholder="titolo annuncio" value="{{old('title')}}">
-                
                 </div>
                 <div class="form-group">
                     <label>Categoria</label>
@@ -26,6 +25,10 @@
                 <div class="form-group">
                 <label>description</label>
                 <textarea class="form-control" name="description" id="" cols="80" rows="10">{{old('description')}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Prezzo</label>
+                    <input type="number" name="price" class="form-control"  aria-describedby="prezzo annuncio" placeholder="prezzo annuncio" value="{{old('price')}}">
                 </div>
                 <button type="submit" class="btn btn-custom">Inserisci</button>
             </form>
