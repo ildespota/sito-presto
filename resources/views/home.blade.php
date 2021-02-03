@@ -34,7 +34,7 @@
         <div class="col-12 col-md-10 offset-md-1 card col-lg-5 offset-lg-0 my-3 ">
           <div class="row py-2">
                 <div class="col-6 d-flex flex-column justify-content-around">
-                  <img src="https://picsum.photos/200" class="img-fluid " alt="{{$announcement->title}}">
+                  <img src="https://picsum.photos/200" class="img-fluid" alt="{{$announcement->title}}">
 
                 </div>
               <div class="col-6">
