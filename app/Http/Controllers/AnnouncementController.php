@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,9 @@ class AnnouncementController extends Controller
      */
     public function create()
     {
-        return view('announcements.form');
+        $categories= Category::all();
+
+        return view('announcements.form', compact('categories'));
     }
 
     /**
@@ -40,9 +43,11 @@ class AnnouncementController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $announcement=Announcement::create([
          'title'=>$request->title,
          'description'=>$request->description,
+         'category_id'=>$request->category,
 
         ]);
         return redirect(route('home'))->with('status', 'Annuncio inserito correttamente');
