@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Category;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateCategoriesTable extends Migration
 {
@@ -16,13 +17,14 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
-            $table->string('img');
+            $table->text('description')->nullable();
+            $table->string('img')->nullable();
             $table->timestamps();
         });
 
     
         $names=['Immobili','Case e Arredamento','Elettrodomestici','Telefonia','Fotografia','Computer','Videogiochi','Auto','Moto e Motorini','Animali','Libri','Musica e Film','Sport','Offerte di Lavoro','Giocattoli'];
+
         foreach($names as $name)
         {
             $category= new Category();
