@@ -24,3 +24,6 @@ Route::get('/announcement/create', [AnnouncementController::class, 'create'])->n
 Route::post('/announcement/store', [AnnouncementController::class, 'store'])->name('announcement.store');
 
 Route::get('/announcement/show/{announcement}', [HomeController::class, 'show'])->name('announcement.show');
+
+Route::get('/announcement/category/{category}', [HomeController::class, 'showCategory'])->name('announcement.category');
+

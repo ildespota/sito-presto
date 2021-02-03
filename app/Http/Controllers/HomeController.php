@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Announcement;
+use COM;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -32,4 +34,16 @@ class HomeController extends Controller
     {
         return view('announcements.detail', compact('announcement'));
     }
+
+
+    public function showCategory(Category $category){
+
+        $category_id=Category::find($category->id);
+        $announcements=$category_id->announcements()->paginate(5);
+        
+        return view('announcements.category', compact('announcements'));
+
+    }
+
+
 }

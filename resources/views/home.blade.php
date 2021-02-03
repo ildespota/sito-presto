@@ -37,7 +37,7 @@
             <p class="card-text">{{$announcement->description}}</p>
             <p class="card-text">{{$announcement->price}}</p>
             <p class="card-text">{{$announcement->created_at->format('d-m-Y')}}</p>
-            <p class="card-text">{{$announcement->category->name}}</p>
+            <a href= "{{route('announcement.category', $announcement->category)}}" class="card-text">{{$announcement->category->name}}</a>
             <a href="{{route('announcement.show', $announcement)}}" class="btn btn-primary">Dettaglio</a>
           </div>
         </div>

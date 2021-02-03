@@ -27,7 +27,7 @@ class AddCategoryIdColumnToAnnouncementsTable extends Migration
     public function down()
     {
         Schema::table('announcements', function (Blueprint $table) {
-            $table->dropForeing(['category_id']);
+            $table->dropForeign(['category_id']);
             $table->dropColumn('category_id');
         });
     }

@@ -37,6 +37,7 @@ title="{{$announcement->title}}"
                 <p class="card-text">{{$announcement->price}}</p>
                 <p class="card-text">{{$announcement->created_at->format('d-m-Y')}}</p>
                 <p class="card-text">{{$announcement->category->name}}</p>
+                <p class="card-text">{{$announcement->user->name}}</p>
                 <a href="{{route('home')}}" class="btn btn-primary">Torna indietro</a>
               </div>
             </div>

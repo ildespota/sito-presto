@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AnnouncementController extends Controller
 {
@@ -49,6 +50,7 @@ class AnnouncementController extends Controller
          'description'=>$request->description,
          'category_id'=>$request->category,
          'price'=>$request->price,
+         'user_id'=>Auth::id()
         ]);
         return redirect(route('home'))->with('status', 'Annuncio inserito correttamente');
     }
