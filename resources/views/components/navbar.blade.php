@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-nav shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            SITO
+            PRESTO
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -16,6 +16,20 @@
                 <li class="nav-item">
                     <a class="nav-link {{(Route::currentRouteName()=='announcement.create') ? 'active' : " "}} " href="{{ route('announcement.create') }}">Inserisci annuncio</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a id="categoryDropdown" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Categorie</a>
+                
+                <div class="dropdown-menu dropdown-menu-right bg-nav" for="categoryDropdown">
+                    @foreach ($categories as $category)
+                    <a class="nav-link" href="{{route('announcement.category', $category)}}">
+                     {{$category->name}}
+                    </a>   
+                    @endforeach
+                   
+                    
+
+                </div>
+            </li>
             </ul>
 
 
@@ -41,8 +55,8 @@
                             {{ Auth::user()->name }}
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                        <div class="dropdown-menu dropdown-menu-right bg-nav" aria-labelledby="navbarDropdown">
+                            <a class="nav-link" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}

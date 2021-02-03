@@ -31,22 +31,16 @@
 
 
         @foreach ($announcements as $announcement)
-        <div class="col-12 col-md-10 offset-md-1 card col-lg-5 offset-lg-0 my-3 ">
-          <div class="row py-2">
-                <div class="col-6 d-flex flex-column justify-content-around">
-                  <img src="https://picsum.photos/200" class="img-fluid" alt="{{$announcement->title}}">
-
-                </div>
-              <div class="col-6">
-                <h5 class="">{{$announcement->title}}</h5>
-                <p>{{$announcement->description}}</p>
-                <p class="card-text">{{$announcement->created_at->format('d-m-Y')}}</p>
-                <a href= "{{route('announcement.category', $announcement->category)}}" class="card-text">{{$announcement->category->name}}</a>
-                <h5 class="lead">{{$announcement->price}}</h5>
-                <a href="{{route('announcement.show', $announcement)}}" class="btn btn-primary">Dettaglio</a>
-              </div>
-          </div>
-      </div>
+        <x-card
+        announcement="{{$announcement->id}}"
+        title="{{$announcement->title}}"
+        description="{{$announcement->description}}"
+        createdAt="{{$announcement->created_at->format('d-m-Y')}}"
+        name="{{$announcement->category->name}}"
+        price="{{$announcement->price}}"
+        category="{{$announcement->category->id}}"
+        />
+        
         @endforeach
 
       
