@@ -10015,6 +10015,11 @@ h3 {
   color: var(--white);
 }
 
+/* #tornasu{
+    position: fixed;
+    top: 50%;
+    width: 100%;
+} */
 html {
   scroll-behavior: smooth;
 }

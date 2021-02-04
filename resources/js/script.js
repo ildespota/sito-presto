@@ -5,11 +5,13 @@ window.addEventListener ("scroll",function(){
     /* console.log(window.pageYOffset); */
 
     if (window.pageYOffset>200) {
-    document.getElementById("tornasu").classList.add('d-block');
+    document.getElementById("tornasu").classList.add('visible');
+    document.getElementById("tornasu").classList.remove('invisible');
     }
     
     else if (window.pageYOffset<200) {
-    document.getElementById("tornasu").classList.add('d-none');
+    document.getElementById("tornasu").classList.add('invisible');
+    document.getElementById("tornasu").classList.remove('visible');
     }
     
     /* val[0].innerHTML= "PageYOffset = "+window.pageYOffset */
