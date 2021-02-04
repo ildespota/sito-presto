@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\AnnouncementRequest;
 
 class AnnouncementController extends Controller
 {
@@ -42,7 +43,7 @@ class AnnouncementController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AnnouncementRequest $request)
     {
         // dd($request->all());
         $announcement=Announcement::create([
