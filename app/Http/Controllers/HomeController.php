@@ -39,7 +39,7 @@ class HomeController extends Controller
     public function showCategory(Category $category){
 
         $category_id=Category::find($category->id);
-        $announcements=$category_id->announcements()->paginate(5);
+        $announcements=$category_id->announcements()->orderBy('created_at', 'desc')->paginate(5);
         
         return view('announcements.category', compact('announcements'));
 
