@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AnnouncementController;
 
 /*
@@ -27,3 +28,4 @@ Route::get('/announcement/show/{announcement}', [HomeController::class, 'show'])
 
 Route::get('/announcement/category/{category}', [HomeController::class, 'showCategory'])->name('announcement.category');
 
+Route::get('/revisor/home',[RevisorController::class, 'index'])->name('revisor.index');

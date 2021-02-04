@@ -15,6 +15,13 @@
                     </ul>
                 </div>
             @endif
+            @if (Session::has('access.denied.revisor.only'))
+                <div class="alert alert-danger">
+                    <ul>
+                        <li>{{Session::get('access.denied.revisor.only')}}</li>
+                    </ul>
+                </div>
+            @endif
           </div>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui adipisci expedita corporis aperiam enim numquam vitae animi facilis odit, ad similique delectus ex a nostrum beatae modi amet repellat doloremque.</p>
           <p class="lead">A great starter layout for a landing page</p>
