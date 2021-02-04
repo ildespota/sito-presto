@@ -35,6 +35,11 @@
     border-radius: 0px;
 }
 
+.btn-custom2{
+    background-color: var(--green);
+    color: var(--blue);
+}
+
 /* navbar */
 .bg-nav{
     background-color: var(--blue);
@@ -59,3 +64,10 @@
     box-shadow: 5px 5px  0px var(--violet);
 }
 
+/* card */
+.card-box{
+    padding: 10px;
+    background-color:rgb(240, 240, 240);
+    box-shadow: 5px 5px  0px var(--violet);
+    color: #080e47;
+  }
