@@ -20,6 +20,11 @@
     <x-navbar/>
     <main>
         {{$slot}}
+
+    <div id="tornasu" class="mb-3">
+        <i class="fas fa-arrow-circle-up tornasu fa-3x" width="60px" height="60px"></i>
+        {{-- <img src= "/img/arrowUp.png" class="tornasu" width="40px" height="40px"> --}}
+    </div>
     </main>
     <x-footer/>
     <!-- Scripts -->

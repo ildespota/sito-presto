@@ -10015,6 +10015,10 @@ h3 {
   color: var(--white);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .masthead {
   height: 80vh;
   min-height: 500px;
