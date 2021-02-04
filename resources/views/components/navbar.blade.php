@@ -32,7 +32,7 @@
             </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-            @if (Auth::user()->is_revisor)
+            @if (Auth::user() && Auth::user()->is_revisor)
             <li class="nav-item">
                 <a class="nav-link {{(Route::currentRouteName()=='revisor.index') ? 'active' : " "}} " href="{{ route('revisor.index') }}">Revisor Home <span class="badge-pill badge-warning"
                     >{{\App\Models\Announcement::toBeRevisioned()}}</span></a>
