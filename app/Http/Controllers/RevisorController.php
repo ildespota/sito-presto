@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class RevisorController extends Controller
 {
@@ -11,7 +13,28 @@ class RevisorController extends Controller
     }
 
     public function index(){
-        dd('solo per revisori');
+        $announcement = Announcement::where('is_accepted',null)
+            ->orderByDesc('created_at')
+            ->first();
+        return view('revisor.index', compact('announcement'));
     }
+
+    private function setAccepted($announcement_id, $value){
+        $announcement = Announcement::find($announcement_id);
+        $announcement->is_accepted = $value;
+        $announcement->save();
+        return redirect(route('revisor.index'));
+    }
+
+    public function accept($announcement_id){
+
+        return $this->setAccepted($announcement_id, true);
+    }
+
+    public function reject($announcement_id){
+        return $this->setAccepted($announcement_id, false);
+    }
+
+    
 }
 

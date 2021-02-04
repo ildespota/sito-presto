@@ -26,7 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $announcements = Announcement::all()->take(-5)->sortDesc();
+        $announcements = Announcement::where('is_accepted', true)
+            ->orderByDesc('created_at')
+            ->take(5)->get();
         return view('home', compact('announcements'));
     }
 
@@ -39,7 +41,7 @@ class HomeController extends Controller
     public function showCategory(Category $category){
 
         $category_id=Category::find($category->id);
-        $announcements=$category_id->announcements()->orderBy('created_at', 'desc')->paginate(5);
+        $announcements=$category_id->announcements()->where('is_accepted', true)->orderByDesc('created_at')->paginate(5);
         
         return view('announcements.category', compact('announcements'));
 

@@ -31,11 +31,14 @@
                 </div>
             </li>
             </ul>
-
-
-           
-             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
+            @if (Auth::user()->is_revisor)
+            <li class="nav-item">
+                <a class="nav-link {{(Route::currentRouteName()=='revisor.index') ? 'active' : " "}} " href="{{ route('revisor.index') }}">Revisor Home <span class="badge-pill badge-warning"
+                    >{{\App\Models\Announcement::toBeRevisioned()}}</span></a>
+            </li>
+            @endif
+         
                 <!-- Authentication Links -->
                 @guest
                     @if (Route::has('login'))
