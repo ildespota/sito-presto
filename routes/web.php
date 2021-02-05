@@ -35,3 +35,5 @@ Route::post('/revisor/announcement/{id}/accept',[RevisorController::class, 'acce
 Route::post('/revisor/announcement/{id}/reject',[RevisorController::class, 'reject'])->name('revisor.reject');
 
 Route::get('/revisor/request',[MailController::class, 'create'])->name('revisor.create');
+Route::post('/revisor/submit',[MailController::class, 'submit'])->name('revisor.submit');
+
