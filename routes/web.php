@@ -38,3 +38,4 @@ Route::get('/revisor/request',[MailController::class, 'create'])->name('revisor.
 Route::post('/revisor/submit',[MailController::class, 'submit'])->name('revisor.submit');
 Route::get('/revisor/trash',[RevisorController::class,'indexTrash'])->name('revisor.trash');
 Route::put('/revisor/{id}/restore',[RevisorController::class,'restore'])->name('revisor.restore');
+Route::get('/announcement/search',[HomeController::class,'search'])->name('announcement.search');
