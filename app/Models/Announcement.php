@@ -4,9 +4,9 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Category;
-use Laravel\scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Laravel\Scout\Searchable;
 
 class Announcement extends Model
 {
@@ -22,6 +22,9 @@ class Announcement extends Model
 
         
     ];
+  
+
+   
 
    
 
