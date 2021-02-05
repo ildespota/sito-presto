@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AnnouncementController;
 
@@ -32,3 +33,5 @@ Route::get('/revisor/home',[RevisorController::class, 'index'])->name('revisor.i
 
 Route::post('/revisor/announcement/{id}/accept',[RevisorController::class, 'accept'])->name('revisor.accept');
 Route::post('/revisor/announcement/{id}/reject',[RevisorController::class, 'reject'])->name('revisor.reject');
+
+Route::get('/revisor/request',[MailController::class, 'create'])->name('revisor.create');
