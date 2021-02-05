@@ -126,7 +126,7 @@ return [
         ],
         'asYouType' => false,
         'searchBoolean' => true,
-        /* 'maxDocs' => env('TNTSEARCH_MAX_DOCS', 500), */
+        // 'maxDocs' => env('TNTSEARCH_MAX_DOCS', 500),
     ],
 
 ];

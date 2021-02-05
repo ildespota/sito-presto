@@ -22,19 +22,19 @@ class Announcement extends Model
 
         
     ];
-  
-
+    
     public function toSearchableArray()
-    {
+    { 
         $categories = $this->category->pluck('name')->join(', ');
-        $array =[
-            'id' => $this->id,
-            'title'=> $this->title,
-            'description'=> $this->description,
-            'categories'=> $categories
+        $array=[
+            'id' =>$this->id,
+            'title' =>$this->title,
+            'description' =>$this->description,
+            'categories'=>$categories
         ];
-       
+
         return $array;
+        
     }
 
     public function category(){
