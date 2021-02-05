@@ -22,12 +22,7 @@ class Announcement extends Model
 
         
     ];
-  
-
-   
-
-   
-
+    
     public function toSearchableArray()
     { 
         $categories = $this->category->pluck('name')->join(', ');
