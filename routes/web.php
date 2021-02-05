@@ -36,4 +36,5 @@ Route::post('/revisor/announcement/{id}/reject',[RevisorController::class, 'reje
 
 Route::get('/revisor/request',[MailController::class, 'create'])->name('revisor.create');
 Route::post('/revisor/submit',[MailController::class, 'submit'])->name('revisor.submit');
-
+Route::get('/revisor/trash',[RevisorController::class,'indexTrash'])->name('revisor.trash');
+Route::put('/revisor/{id}/restore',[RevisorController::class,'restore'])->name('revisor.restore');

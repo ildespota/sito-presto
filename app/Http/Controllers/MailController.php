@@ -23,8 +23,8 @@ class MailController extends Controller
         $body = $request->body;
         $mail=Auth::user()->email;
         $name=Auth::user()->name;
-        $revisorRequest= compact('number','address','body','mail','name');
-        Mail::to($mail)->send(New ContactMail($revisorRequest));
+        $contact= compact('number','address','body','mail','name');
+        Mail::to($mail)->send(New ContactMail($contact));
         return redirect(route('home'))->with('request.send','La tua richiesta è stata inviata correttamente');
     }
 

@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>ciao belli</h1>
+    <h1>Benvenuto {{$contact['name']}}</h1>
+    <h3>Questo è il tuo riepilogo:</h3>
+    <ul>
+        <li>{{$contact['name']}}</li>
+        <li>{{$contact['mail']}}</li>
+        <li>{{$contact['number']}}</li>
+        <li>{{$contact['address']}}</li>
+    </ul>
+    <p>{{$contact['body']}}</p>
 </body>
 </html>
