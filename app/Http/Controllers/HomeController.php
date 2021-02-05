@@ -51,7 +51,7 @@ class HomeController extends Controller
     public function search(Request $request){
 
         $q=$request->q;
-        $announcements=Announcement::search($q)->where('is_accepted', true)->get();    
+        $announcements=Announcement::search($q)->where('is_accepted', true)->get(); 
    
         return view('search_result', compact('announcements','q'));
     }

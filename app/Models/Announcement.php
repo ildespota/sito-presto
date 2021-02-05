@@ -25,12 +25,13 @@ class Announcement extends Model
     
     public function toSearchableArray()
     { 
-        $categories = $this->category->pluck('name')->join(', ');
+        $category = $this->category->name;
+
         $array=[
             'id' =>$this->id,
             'title' =>$this->title,
             'description' =>$this->description,
-            'categories'=>$categories
+            'category'=>$category
         ];
 
         return $array;
