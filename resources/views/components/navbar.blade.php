@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-nav shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            PRESTO
+            <i class="fab fa-accessible-icon"></i> PRESTO
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -36,6 +36,9 @@
             <li class="nav-item">
                 <a class="nav-link {{(Route::currentRouteName()=='revisor.index') ? 'active' : " "}} " href="{{ route('revisor.index') }}">Revisor Home <span class="badge-pill badge-warning"
                     >{{\App\Models\Announcement::toBeRevisioned()}}</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{(Route::currentRouteName()=='revisor.trash') ? 'active' : " "}} " href="{{ route('revisor.trash') }}">Cestino</a>
             </li>
             @endif
          

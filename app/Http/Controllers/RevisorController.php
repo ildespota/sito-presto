@@ -43,7 +43,7 @@ class RevisorController extends Controller
 
 
     public function restore($announcement_id){
-        dd($announcement_id);
+        /* dd($announcement_id); */
         return $this->setAccepted($announcement_id,null);
     }
 

@@ -22,7 +22,7 @@
 
         <ul class="list-unstyled mb-0">
           <li>
-            <a href="#!" class="text-white">Link 1</a>
+            <a href="@if (Auth::user()) {{route('revisor.create')}} @else {{route('login')}}  @endif" class="text-white">Lavora con noi</a>
           </li>
           <li>
             <a href="#!" class="text-white">Link 2</a>
@@ -39,20 +39,14 @@
 
       <!--Grid column-->
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase mb-0">Links</h5>
+        <h5 class="text-uppercase mb-0">Social</h5>
 
         <ul class="list-unstyled">
           <li>
-            <a href="#!" class="text-white">Link 1</a>
+            <a href="http:\\www.facebook.com" target="_blank" class="text-white"><i class="fab fa-facebook"></i> Facebook</a>
           </li>
           <li>
-            <a href="#!" class="text-white">Link 2</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Link 3</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Link 4</a>
+            <a href="http:\\www.instagram.com" target="_blank" class="text-white"><i class="fab fa-instagram"></i> Instagram</a>
           </li>
         </ul>
       </div>

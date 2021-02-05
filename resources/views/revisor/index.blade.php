@@ -7,14 +7,10 @@ title="revisori"
         <div class="col-12">
            
 
-            <div class="">
-            <img src="https://picsum.photos/400/200" class="d-block w-100" alt="...">
-            </div>
-            <div class="">
-            <img src="https://picsum.photos/401/201" class="d-block w-100" alt="...">
-            </div>
-            <div class="">
-            <img src="https://picsum.photos/402/202" class="d-block w-100" alt="...">
+            <div class="row justify-content-around">
+            <img src="https://picsum.photos/400/200" alt="...">
+            <img src="https://picsum.photos/401/201" alt="...">
+            <img src="https://picsum.photos/402/202" alt="...">
             </div>
                    
             <div class="card">
