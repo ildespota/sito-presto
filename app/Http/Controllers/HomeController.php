@@ -26,10 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $categories = Category::inRandomOrder()->limit(3)->get();
+
         $announcements = Announcement::where('is_accepted', true)
             ->orderByDesc('created_at')
             ->take(5)->get();
-        return view('home', compact('announcements'));
+        return view('home', compact('announcements', 'categories'));
     }
 
     public function show(Announcement $announcement)

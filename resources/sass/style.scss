@@ -18,6 +18,10 @@ html{
     scroll-behavior: smooth;
 }
 
+main{
+    min-height: 80vh;
+}
+
 .masthead {
     height: 80vh;
     min-height: 500px;
@@ -46,12 +50,28 @@ html{
 .btn-custom{
     background-color: var(--blue);
     color: var(--white);
-    border-radius: 0px;
+    border-radius: 5px;
 }
 
 .btn-custom2{
     background-color: var(--green);
     color: var(--blue);
+    border-radius: 5px;
+
+}
+
+.btn-custom:hover{
+    background-color: var(--violet);
+    color: var(--white);
+    box-shadow: 2px 2px  2px var(--blue);
+
+}
+
+.btn-custom2:hover{
+    background-color: var(--blue);
+    color: var(--white);
+    box-shadow: 2px 2px  2px var(--violet);
+
 }
 
 /* navbar */
@@ -59,9 +79,14 @@ html{
     background-color: var(--blue);
     color:var(--white);
 }
-.active{
+// .bg-nav:hover{
+//     background-color: var(--blue);
+//     color:var(--white);
+// }
+.active-navbar{
     border-bottom: 4px solid var(--green);
 }
+
 
 /* pagina form */
 .box3{
