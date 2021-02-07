@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-nav shadow-sm">
-    <div class="container">
+    <div class="container-fluid">
         <a class="navbar-brand" href="{{ url('/') }}">
             <i class="fab fa-accessible-icon"></i> PRESTO
         </a>
@@ -10,9 +10,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link {{(Route::currentRouteName()=='home') ? 'active' : ' '}} " href="{{ route('home') }}">Home</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link {{(Route::currentRouteName()=='announcement.create') ? 'active' : ' '}} " href="{{ route('announcement.create') }}">Inserisci annuncio</a>
                 </li>

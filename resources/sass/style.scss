@@ -21,11 +21,19 @@ html{
 .masthead {
     height: 80vh;
     min-height: 500px;
-    background-image: url('/img/game.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: var(--blue);
+}
+
+.masthead-mobile {
+    height: 40vh;
+    min-height: 300px; 
+    color: var(--blue);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .box{
