@@ -26,7 +26,7 @@ class AnnouncementRequest extends FormRequest
         return [
             
             'title'=>'required|min:3|max:30',
-            'description'=>'required|min:3|max:500',
+            'description'=>'required|min:3|max:1500',
             'price'=>'required|integer|min:1',
             'category'=>'required',
 

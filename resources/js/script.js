@@ -2,7 +2,7 @@ const { set } = require("lodash");
 
 window.addEventListener ("scroll",function(){
 
-    /* console.log(window.pageYOffset); */
+   
 
     if (window.pageYOffset>200) {
     document.getElementById("tornasu").classList.add('visible');
@@ -14,12 +14,38 @@ window.addEventListener ("scroll",function(){
     document.getElementById("tornasu").classList.remove('visible');
     }
     
-    /* val[0].innerHTML= "PageYOffset = "+window.pageYOffset */
+    
 },!1);
 
 let tornaSu = document.querySelector('#tornasu');
 
-tornaSu.addEventListener('click', function(){
-    /* console.log(window.pageYOffset); */
-    $(window).scrollTop(0);
-})
+if(tornaSu){
+    tornaSu.addEventListener('click', function(){
+  
+        $(window).scrollTop(0);
+    }) 
+}
+
+
+/* carosello */
+$('#recipeCarousel').carousel({
+    interval: 10000
+  })
+  
+  $('.carousel .carousel-item').each(function(){
+      var minPerSlide = 3;
+      var next = $(this).next();
+      if (!next.length) {
+      next = $(this).siblings(':first');
+      }
+      next.children(':first-child').clone().appendTo($(this));
+      
+      for (var i=0;i<minPerSlide;i++) {
+          next=next.next();
+          if (!next.length) {
+            next = $(this).siblings(':first');
+          }
+          
+          next.children(':first-child').clone().appendTo($(this));
+        }
+  });
