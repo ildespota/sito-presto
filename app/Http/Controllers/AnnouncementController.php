@@ -53,7 +53,7 @@ class AnnouncementController extends Controller
          'price'=>$request->price,
          'user_id'=>Auth::id()
         ]);
-        return redirect(route('home'))->with('status', 'Annuncio inserito correttamente');
+        return redirect(route('announcement.thankyou'));
     }
 
     /**
@@ -99,5 +99,9 @@ class AnnouncementController extends Controller
     public function destroy(Announcement $announcement)
     {
         //
+    }
+
+    public function thankyou(){
+        return view('announcements.thankyou');
     }
 }

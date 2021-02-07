@@ -39,3 +39,8 @@ Route::post('/revisor/submit',[MailController::class, 'submit'])->name('revisor.
 Route::get('/revisor/trash',[RevisorController::class,'indexTrash'])->name('revisor.trash');
 Route::put('/revisor/{id}/restore',[RevisorController::class,'restore'])->name('revisor.restore');
 Route::get('/announcement/search',[HomeController::class,'search'])->name('announcement.search');
+
+Route::get('/announcement/thankyou',[AnnouncementController::class,'thankyou'])->name('announcement.thankyou');
+Route::get('/revisor/notallowed',[HomeController::class,'notallowed'])->name('revisor.notallowed');
+
+
