@@ -6,13 +6,13 @@
     <div class="row">
       <!--Grid column-->
       <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Footer Content</h5>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-          voluptatem veniam, est atque cumque eum delectus sint!
-        </p>
+        <h5 class="text-uppercase">Presto</h5>
+        <p>Il primo sito di annunci in Italia!</p>
+        <ul class="list-unstyled">
+          <li>Sede legale: via Fermi n° 2</li>
+          <li>00100 Roma </li>
+          <li>P.IVA 04132350986 </li>
+        </ul>
       </div>
       <!--Grid column-->
 
@@ -30,9 +30,6 @@
           <li>
             <a href="#!" class="text-white">Privacy Policy</a>
           </li>
-           <li>
-             <p class="text-white">P.IVA 04132350986 </p>
-          </li> 
         </ul>
       </div>
       <!--Grid column-->
