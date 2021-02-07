@@ -18,8 +18,8 @@
 
       
     </div>
-    <div class="row mt-4">
-      <div class="d-flex justify-content-center">
+    <div class="row mt-4 justify-content-center">
+      <div class="">
         {!! $announcements->links() !!}
       </div>
     </div>

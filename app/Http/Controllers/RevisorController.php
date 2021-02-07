@@ -36,8 +36,7 @@ class RevisorController extends Controller
     }
     public function indexTrash(){
     $announcements = Announcement::where('is_accepted',false)
-    ->orderByDesc('created_at')
-    ->get();
+    ->orderByDesc('created_at')->paginate(2);
     return view('revisor.trash',compact('announcements')); 
     }
 
