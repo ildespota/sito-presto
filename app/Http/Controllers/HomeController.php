@@ -34,7 +34,15 @@ class HomeController extends Controller
 
     public function show(Announcement $announcement)
     {
-        return view('announcements.detail', compact('announcement'));
+        if($announcement->is_accepted)
+        {
+            return view('announcements.detail', compact('announcement')); 
+        }
+        else
+        {
+            return redirect(route('home'));
+        }
+       
     }
 
 

@@ -26,7 +26,7 @@
               <p class="card-text">{{$announcement->created_at->format('d-m-Y')}}</p>
               <p class="card-text">{{$announcement->category->name}}</p>
               <h5 class="lead">{{$announcement->price}}</h5>
-              <a href="{{route('announcement.show', $announcement)}}" class="btn btn-custom2 rounded">Dettaglio</a>
+              <!-- <a href="{{route('announcement.show', $announcement)}}" class="btn btn-custom2 rounded">Dettaglio</a> -->
           </div>
         </div>
         <button type="submit" class="btn btn-success my-2">Ripristina</button>

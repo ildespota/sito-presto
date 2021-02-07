@@ -25,14 +25,14 @@
             <a href="@if (Auth::user()) {{route('revisor.create')}} @else {{route('login')}}  @endif" class="text-white">Lavora con noi</a>
           </li>
           <li>
-            <a href="#!" class="text-white">Link 2</a>
+            <a href="#!" class="text-white">Cookie Policy</a>
           </li>
           <li>
-            <a href="#!" class="text-white">Link 3</a>
+            <a href="#!" class="text-white">Privacy Policy</a>
           </li>
-          <li>
-            <a href="#!" class="text-white">Link 4</a>
-          </li>
+           <li>
+             <p class="text-white">P.IVA 04132350986 </p>
+          </li> 
         </ul>
       </div>
       <!--Grid column-->
