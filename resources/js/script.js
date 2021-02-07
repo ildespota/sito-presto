@@ -49,3 +49,31 @@ $('#recipeCarousel').carousel({
           next.children(':first-child').clone().appendTo($(this));
         }
   });
+
+  /* Redirect thankyou page */
+
+  let thankyou = document.querySelector('#thankyou');
+
+    if(thankyou){
+
+        window.setTimeout(function(){
+
+        // Vai alla nuova location
+        window.location.href = "/";
+
+    }, 3000);
+}
+
+/* Redirect not allowed */
+
+let notallowed = document.querySelector('#notallowed');
+
+if(notallowed){
+
+    window.setTimeout(function(){
+
+    // Vai alla nuova location
+    window.location.href = "/";
+
+}, 3000);
+}

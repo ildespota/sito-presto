@@ -21,6 +21,6 @@ class RevisorMiddleware
             return $next($request);
 
         } 
-        return redirect('/')->with('access.denied.revisor.only','access denied');
+        return redirect(route('revisor.notallowed'));
     }
 }
