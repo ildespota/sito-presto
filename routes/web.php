@@ -43,4 +43,7 @@ Route::get('/announcement/search',[HomeController::class,'search'])->name('annou
 Route::get('/announcement/thankyou',[AnnouncementController::class,'thankyou'])->name('announcement.thankyou');
 Route::get('/revisor/notallowed',[HomeController::class,'notallowed'])->name('revisor.notallowed');
 
+Route::post('/announcement/images/upload',[AnnouncementController::class, 'uploadImage'])->name('annoucement.images.upload');
 
+Route::delete('/announcement/images/remove',[AnnouncementController::class,'removeImage'])->name('announcement.images.remove');
+Route::get('/announcement/images',[AnnouncementController::class,'getImages'])->name('announcement.images');
