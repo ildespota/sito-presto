@@ -60,6 +60,16 @@ class AnnouncementController extends Controller
         return redirect(route('announcement.thankyou'));
     }
 
+    public function uploadImage(Request $request)
+    {
+        $uniqueSecret=$request->uniqueSecret; 
+        $filename=$request->file('file')->store("public/temp/{$uniqueSecret}");
+        session()->push("images.{$uniqueSecret}",$filename);
+        return response()->json(
+            session()->get("images.{$uniqueSecret}")    
+        );
+    }
+
     /**
      * Display the specified resource.
      *
