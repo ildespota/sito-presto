@@ -22,14 +22,16 @@ title="{{$announcement->title}}"
 
                     <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
                         <div class="carousel-inner w-100" role="listbox">
-                            <div class="carousel-item active">
+                            @for($i = 0; $i<count($announcement->announcementImages); $i++)
+                            <div class="carousel-item @if($i == 0) active @endif">
                                 <div class="col-md-4">
                                     <div class="card card-body">
-                                        <img class="img-fluid" src="http://placehold.it/380?text=1">
+                                        <img class="img-fluid" src="{{Storage::url($announcement->announcementImages[$i]->file)}}">
                                     </div>
                                 </div>
                             </div>
-                            <div class="carousel-item">
+                            @endfor
+                            {{-- <div class="carousel-item">
                                 <div class="col-md-4">
                                     <div class="card card-body">
                                         <img class="img-fluid" src="http://placehold.it/380?text=2">
@@ -63,7 +65,7 @@ title="{{$announcement->title}}"
                                         <img class="img-fluid" src="http://placehold.it/380?text=6">
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>

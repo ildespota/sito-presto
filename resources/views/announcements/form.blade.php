@@ -47,7 +47,7 @@
                 <label for="images">Immagini</label>
                 
                 <div class="col-md-12">
-                    <div class="dropzone" id="dropHere"></div>
+                    <div class="dropzone" id="drophere"></div>
                     
                     @error('images')
                         <span class="invalid-feedback" role="alert">

@@ -1,6 +1,6 @@
 const { set } = require("lodash");
 
-window.addEventListener ("scroll",function(){
+/* window.addEventListener ("scroll",function(){
 
    
 
@@ -24,7 +24,7 @@ if(tornaSu){
   
         $(window).scrollTop(0);
     }) 
-}
+} */
 
 
 /* carosello */
