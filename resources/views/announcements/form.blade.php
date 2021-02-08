@@ -10,6 +10,8 @@
         <div class="col-12 col-md-7 mb-5">
             <form action="{{route('announcement.store')}}" method="POST">
                 @csrf
+                <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
+
                 @if ($errors->any())
                 <div class="alert alert-danger">
                  <ul>
@@ -40,6 +42,19 @@
                     <label>Prezzo</label>
                     <input type="number" name="price" class="form-control"  aria-describedby="prezzo annuncio" placeholder="prezzo annuncio" value="{{old('price')}}">
                 </div>
+
+                <div class="form-group">
+                <label>Immagini</label>
+                <div class="dropzone form-control" id="dropHere"></div>
+                    
+                 @error('images')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{$message}}</strong>
+                        </span>
+                @enderror
+                </div>
+
+
                 <button type="submit" class="btn btn-custom">Inserisci</button>
             </form>
         </div>

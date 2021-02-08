@@ -37,7 +37,7 @@ class AnnouncementController extends Controller
 
         $categories= Category::all();
 
-        return view('announcements.form', compact('categories'));
+        return view('announcements.form', compact('categories', 'uniqueSecret'));
     }
 
     /**
@@ -48,7 +48,7 @@ class AnnouncementController extends Controller
      */
     public function store(AnnouncementRequest $request)
     {
-        // dd($request->all());
+        // dd($request->uniqueSecret);
         $announcement=Announcement::create([
          'title'=>$request->title,
          'description'=>$request->description,
@@ -56,6 +56,7 @@ class AnnouncementController extends Controller
          'price'=>$request->price,
          'user_id'=>Auth::id()
         ]);
+        
         return redirect(route('announcement.thankyou'));
     }
 
