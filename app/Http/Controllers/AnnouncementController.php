@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Models\AnnouncementImage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\AnnouncementRequest;
 
 class AnnouncementController extends Controller
@@ -56,6 +59,25 @@ class AnnouncementController extends Controller
          'price'=>$request->price,
          'user_id'=>Auth::id()
         ]);
+
+        $uniqueSecret = $request->uniqueSecret;
+
+        $images = session()->get("images.{$uniqueSecret}");
+
+        foreach ($images as $image) {
+            $i= new AnnouncementImage();
+            $fileName = basename($image);
+            $newFileName= "public/announcements/{$announcement->id}/{$fileName}";
+
+            Storage::move($image, $newFileName);
+            $i->file=$newFileName;
+
+            $i->announcement_id= $announcement->id;
+            $i->save();
+
+        }
+
+        File::deleteDirectory(storage_path('/app/public/temp/{$uniqueSecret}'));
         
         return redirect(route('announcement.thankyou'));
     }
@@ -66,8 +88,21 @@ class AnnouncementController extends Controller
         $filename=$request->file('file')->store("public/temp/{$uniqueSecret}");
         session()->push("images.{$uniqueSecret}",$filename);
         return response()->json(
-            session()->get("images.{$uniqueSecret}")    
+            // session()->get("images.{$uniqueSecret}")    
+            ['id'=> $filename]
         );
+
+
+    }
+
+    public function removeImage(Request $request){
+
+        $uniqueSecret=$request->uniqueSecret; 
+        $filename=$request->id;
+        session()->push("removeimages.{$uniqueSecret}", $filename);
+        Storage::delete($filename);
+
+        return response()->json('ok');
     }
 
     /**
