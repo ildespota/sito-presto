@@ -8,8 +8,8 @@
 </head>
 <body>
     {{-- <h1>Benvenuto {{$contact['name']}}</h1> --}}
-    <h1>Nuova richiesta di collaborazione</h1>
-    <h3>{{$contact['name']}} ha richiesto di diventare collaboratore:</h3>
+    <h1>La tua mail è stata inviata con successo</h1>
+    <h3>Ecco il tuo riepilogo</h3>
     <ul>
         <li>{{$contact['name']}}</li>
         <li>{{$contact['mail']}}</li>
