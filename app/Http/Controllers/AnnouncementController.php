@@ -32,6 +32,9 @@ class AnnouncementController extends Controller
      */
     public function create()
     {
+
+        $uniqueSecret = base_convert(sha1(uniqid(mt_rand())), 16, 36);
+
         $categories= Category::all();
 
         return view('announcements.form', compact('categories'));
