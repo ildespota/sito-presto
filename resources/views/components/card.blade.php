@@ -1,7 +1,7 @@
 <div class="card col-12 col-md-10 col-lg-5 offset-md-1 offset-lg-0 my-3 card-box rounded-0">
     <div class="row py-2">
           <div class="col-12 col-md-6 d-flex flex-column justify-content-around">
-            {{dd($image)}}
+            {{-- {{dd($image)}} --}}
             <img src="@if($image) {{Storage::url($image)}} @else https://picsum.photos/300/200 @endif" class="img-fluid" alt="{{$title}}">
 
           </div>

@@ -53,7 +53,7 @@
       
 
         @foreach ($announcements as $announcement)
-      {{-- {{dd($announcement->announcementImages->first()->file)}} --}}
+      {{-- {{dd($announcement->announcementImages->first()['file'])}} --}}
 
         <x-card
         announcement="{{$announcement->id}}"
@@ -63,7 +63,7 @@
         name="{{$announcement->category->name}}"
         price="{{$announcement->price}}"
         category="{{$announcement->category->id}}"
-        image="{{$announcement->announcementImages->first()->file}}"
+        image="{{$announcement->announcementImages->first()['file'] ?? ''}}"
         />
         
         @endforeach

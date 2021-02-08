@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
             _token: csrftoken, 
             uniqueSecret: uniqueSecret
         },
-        addRemoveLinks:true,
+
+        addRemoveLinks: true ,
 
         init:function(){
           $.ajax({
@@ -43,11 +44,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
          type: 'DELETE',
          url: '/announcement/images/remove',
          data: {
-        _token:csrftoken,
-        id:file.serverId,
-        uniqueSecret:uniqueSecret
+          _token: csrftoken,
+          id: file.serverId,
+          uniqueSecret: uniqueSecret
          },
-
          dataType: 'json'
        });
      });
