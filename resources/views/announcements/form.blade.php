@@ -43,15 +43,18 @@
                     <input type="number" name="price" class="form-control"  aria-describedby="prezzo annuncio" placeholder="prezzo annuncio" value="{{old('price')}}">
                 </div>
 
-                <div class="form-group">
-                <label>Immagini</label>
-                <div class="dropzone form-control" id="dropHere"></div>
+                <div class="form-group row">
+                <label for="images">Immagini</label>
+                
+                <div class="col-md-12">
+                    <div class="dropzone" id="dropHere"></div>
                     
-                 @error('images')
+                    @error('images')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{$message}}</strong>
                         </span>
-                @enderror
+                    @enderror
+                </div>
                 </div>
 
 

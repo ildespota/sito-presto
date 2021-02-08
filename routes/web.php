@@ -46,3 +46,4 @@ Route::get('/revisor/notallowed',[HomeController::class,'notallowed'])->name('re
 Route::post('/announcement/images/upload',[AnnouncementController::class, 'uploadImage'])->name('annoucement.images.upload');
 
 Route::delete('/announcement/images/remove',[AnnouncementController::class,'removeImage'])->name('announcement.images.remove');
+Route::get('/announcement/images',[AnnouncementController::class,'getImages'])->name('announcement.images');

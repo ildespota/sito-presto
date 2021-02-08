@@ -6,7 +6,7 @@ require('../../node_modules/@fortawesome/fontawesome-free/js/all');
 //Nostro script
 require('./script');
 
-window.Dropzone = require('dropzone');
+document.Dropzone = require('dropzone');
 
 Dropzone.autoDiscover = false;
 

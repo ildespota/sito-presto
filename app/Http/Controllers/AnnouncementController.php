@@ -33,10 +33,10 @@ class AnnouncementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
 
-        $uniqueSecret = base_convert(sha1(uniqid(mt_rand())), 16, 36);
+        $uniqueSecret = $request->old('uniqueSecret', base_convert(sha1(uniqid(mt_rand())), 16, 36));
 
         $categories= Category::all();
 
@@ -62,7 +62,9 @@ class AnnouncementController extends Controller
 
         $uniqueSecret = $request->uniqueSecret;
 
-        $images = session()->get("images.{$uniqueSecret}");
+        $images = session()->get("images.{$uniqueSecret}", []);
+        $removedImages= session()->get("removedimages.{$uniqueSecret}", []);
+        $images=array_diff($images,$removedImages);
 
         foreach ($images as $image) {
             $i= new AnnouncementImage();
@@ -103,6 +105,23 @@ class AnnouncementController extends Controller
         Storage::delete($filename);
 
         return response()->json('ok');
+    }
+
+    public function getImages(Request $request){
+        $uniqueSecret=$request->uniqueSecret; 
+        $images = session()->get("images.{$uniqueSecret}", []);
+        $removedImages= session()->get("removedimages.{$uniqueSecret}", []);
+        $images=array_diff($images,$removedImages);
+        $data=[];
+
+        foreach($images as $image){
+            $data[]=[
+                'id'=>$image,
+                'src'=> Storage::url($image)
+            ];
+        }
+
+        return response()->json($data);
     }
 
     /**

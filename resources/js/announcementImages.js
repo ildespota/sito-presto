@@ -1,4 +1,5 @@
-$(function(){   
+const Dropzone = require("dropzone");
+document.addEventListener('DOMContentLoaded', ()=>{   
 
   if($("#dropHere").length>0) {
 
@@ -10,7 +11,26 @@ $(function(){
             _token: csrftoken, 
             uniqueSecret: uniqueSecret
         },
-        addRemoveLinks:true
+        addRemoveLinks:true,
+
+        init:function(){
+          $.ajax({
+              type: 'GET',
+              url:'/announcement/images',
+              data: {
+                uniqueSecret:uniqueSecret
+              },
+              dataType: 'json'
+          }).done(function(data){
+            $.each(data,function(key,value){
+              let file ={
+                serverId:value.id
+              };
+              mydropzone.options.addedfile.call(mydropzone,file);
+              mydropzone.options.thumbnail.call(mydropzone,file,value.src);
+            });
+          });
+        }
     });
     
      mydropzone.on("success", function(file, response){
