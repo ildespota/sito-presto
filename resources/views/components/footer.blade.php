@@ -1,3 +1,4 @@
+use Illuminate\Support\Facades\Auth;
         <!-- Footer -->
 <footer class="bg-nav text-center text-lg-start">
   <!-- Grid container -->
@@ -29,6 +30,30 @@
           </li>
           <li>
             <a href="#!" class="text-white">Privacy Policy</a>
+          </li>
+          <li>
+                <x-flag
+                  lang="it"
+                  flag="it"
+                
+                />
+
+          </li>
+
+          <li>
+                
+                <x-flag
+                  lang="en"
+                  flag="gb"
+                
+                />
+          </li>
+          <li>
+          <x-flag
+                  lang="es"
+                  flag="es"
+                
+                />
           </li>
         </ul>
       </div>

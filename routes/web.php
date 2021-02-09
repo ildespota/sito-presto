@@ -47,3 +47,5 @@ Route::post('/announcement/images/upload',[AnnouncementController::class, 'uploa
 
 Route::delete('/announcement/images/remove',[AnnouncementController::class,'removeImage'])->name('announcement.images.remove');
 Route::get('/announcement/images',[AnnouncementController::class,'getImages'])->name('announcement.images');
+
+Route::post('/locale/{locale}',[HomeController::class,'locale'])->name('locale');
