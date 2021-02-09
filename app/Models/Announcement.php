@@ -7,6 +7,7 @@ use App\Models\Category;
 use Laravel\Scout\Searchable;
 use App\Models\AnnouncementImage;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Announcement extends Model
@@ -53,5 +54,21 @@ class Announcement extends Model
 
     public function announcementImages(){
         return $this->hasMany(AnnouncementImage::class);
+    }
+
+    public function getCover()
+    {
+        if(isset($this->announcementImages()->first()->file)){
+            return Storage::url($this->announcementImages()->first()->file);
+        } else {
+            return Storage::url('public/img/default.png');
+        }
+    }
+
+    public function getCoverCarousel($i)
+    {
+        if(isset($this->announcementImages[$i]->file)){
+            return Storage::url($this->announcementImages[$i]->file);
+        }
     }
 }

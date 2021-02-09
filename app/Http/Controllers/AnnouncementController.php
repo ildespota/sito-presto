@@ -60,11 +60,11 @@ class AnnouncementController extends Controller
          'user_id'=>Auth::id()
         ]);
 
-        $uniqueSecret = $request->uniqueSecret;
+        $uniqueSecret = $request->input('uniqueSecret');
 
         $images = session()->get("images.{$uniqueSecret}", []);
         $removedImages= session()->get("removedimages.{$uniqueSecret}", []);
-        $images=array_diff($images,$removedImages);
+        $images = array_diff($images,$removedImages);
 
         foreach ($images as $image) {
             $i= new AnnouncementImage();
@@ -86,29 +86,31 @@ class AnnouncementController extends Controller
 
     public function uploadImage(Request $request)
     {
-        $uniqueSecret=$request->uniqueSecret; 
+        $uniqueSecret=$request->input('uniqueSecret'); 
         $filename=$request->file('file')->store("public/temp/{$uniqueSecret}");
         session()->push("images.{$uniqueSecret}",$filename);
         return response()->json(
             // session()->get("images.{$uniqueSecret}")    
-            ['id'=> $filename]
+            [
+                    'id'=> $filename
+            ]
         );
 
 
     }
 
     public function removeImage(Request $request){
-
-        $uniqueSecret=$request->uniqueSecret; 
-        $filename=$request->id;
-        session()->push("removeimages.{$uniqueSecret}", $filename);
+        /* dd('ciao'); */
+        $uniqueSecret=$request->input('uniqueSecret'); 
+        $filename=$request->input('id');
+        session()->push("removedimages.{$uniqueSecret}", $filename);
         Storage::delete($filename);
 
         return response()->json('ok');
     }
 
     public function getImages(Request $request){
-        $uniqueSecret=$request->uniqueSecret; 
+        $uniqueSecret=$request->input('uniqueSecret'); 
         $images = session()->get("images.{$uniqueSecret}", []);
         $removedImages= session()->get("removedimages.{$uniqueSecret}", []);
         $images=array_diff($images,$removedImages);

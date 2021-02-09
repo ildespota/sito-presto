@@ -8,7 +8,7 @@
             <h1><i class="fas fa-arrow-right"></i></h1>
         </div>
         <div class="col-12 col-md-7 mb-5">
-            <form action="{{route('announcement.store')}}" method="POST">
+            <form action="{{route('announcement.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
 
@@ -47,7 +47,7 @@
                 <label for="images">Immagini</label>
                 
                 <div class="col-md-12">
-                    <div class="dropzone" id="dropHere"></div>
+                    <div class="dropzone" id="drophere"></div>
                     
                     @error('images')
                         <span class="invalid-feedback" role="alert">

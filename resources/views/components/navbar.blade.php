@@ -14,7 +14,7 @@
                     <a class="nav-link {{(Route::currentRouteName()=='home') ? 'active' : ' '}} " href="{{ route('home') }}">Home</a>
                 </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link {{(Route::currentRouteName()=='announcement.create') ? 'active-navbar' : ' '}} " href="{{ route('announcement.create') }}">Inserisci annuncio</a>
+                    <a class="nav-link {{(Route::currentRouteName()=='announcement.create') ? 'active-navbar' : ' '}} " href="{{ route('announcement.create') }}">{{__('ui.ads')}}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a id="categoryDropdown" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Categorie</a>
