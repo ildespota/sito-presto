@@ -63,7 +63,7 @@
         name="{{$announcement->category->name}}"
         price="{{$announcement->price}}"
         category="{{$announcement->category->id}}"
-        image="{{$announcement->announcementImages->first()['file'] ?? ''}}"
+        image="{{$announcement->getCover()}}"
         />
         
         @endforeach

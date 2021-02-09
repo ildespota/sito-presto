@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         },
 
         addRemoveLinks: true ,
-
+        
         init:function(){
           $.ajax({
               type: 'GET',
@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
      }); 
 
      myDropzone.on("removedfile", function(file){
-       $.ajax({
+       alert('ciao');
+       $ajax({
          type: 'DELETE',
          url: '/announcement/images/remove',
          data: {

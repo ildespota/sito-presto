@@ -100,7 +100,7 @@ class AnnouncementController extends Controller
     }
 
     public function removeImage(Request $request){
-
+        /* dd('ciao'); */
         $uniqueSecret=$request->input('uniqueSecret'); 
         $filename=$request->input('id');
         session()->push("removedimages.{$uniqueSecret}", $filename);

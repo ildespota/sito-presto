@@ -2,7 +2,7 @@
     <div class="row py-2">
           <div class="col-12 col-md-6 d-flex flex-column justify-content-around">
             {{-- {{dd($image)}} --}}
-            <img src="@if($image) {{Storage::url($image)}} @else https://picsum.photos/300/200 @endif" class="img-fluid" alt="{{$title}}">
+            <img src="{{$image}}" class="img-fluid" alt="{{$title}}">
 
           </div>
         <div class="col-12 col-md-6 pt-4 pt-md-0">

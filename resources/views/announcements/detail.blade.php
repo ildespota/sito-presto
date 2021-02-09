@@ -23,6 +23,7 @@ title="{{$announcement->title}}"
                     <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
                         <div class="carousel-inner w-100" role="listbox">
                             @for($i = 0; $i<count($announcement->announcementImages); $i++)
+                           
                             <div class="carousel-item @if($i == 0) active @endif">
                                 <div class="col-md-4">
                                     <div class="card card-body">
