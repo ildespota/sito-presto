@@ -69,6 +69,10 @@ class HomeController extends Controller
     public function notallowed(){
         return view('revisor.notallowed');
     }
-
+    public function locale($locale){
+       
+        session()->put('locale',$locale);
+        return redirect()->back();
+    }
 
 }

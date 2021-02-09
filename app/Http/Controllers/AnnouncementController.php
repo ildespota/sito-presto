@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\AnnouncementRequest;
+use App\Jobs\ResizeImage;
 
 class AnnouncementController extends Controller
 {
@@ -72,6 +73,20 @@ class AnnouncementController extends Controller
             $newFileName= "public/announcements/{$announcement->id}/{$fileName}";
 
             Storage::move($image, $newFileName);
+            dispatch(new ResizeImage(
+                $newFileName, 
+                380,
+                380
+
+            ));
+
+            dispatch(new ResizeImage(
+                $newFileName, 
+                600,
+                500
+
+            ));
+
             $i->file=$newFileName;
 
             $i->announcement_id= $announcement->id;
@@ -88,6 +103,13 @@ class AnnouncementController extends Controller
     {
         $uniqueSecret=$request->input('uniqueSecret'); 
         $filename=$request->file('file')->store("public/temp/{$uniqueSecret}");
+        dispatch(new ResizeImage(
+            $filename, 
+            120,
+            120
+
+        ));
+
         session()->push("images.{$uniqueSecret}",$filename);
         return response()->json(
             // session()->get("images.{$uniqueSecret}")    
@@ -119,7 +141,7 @@ class AnnouncementController extends Controller
         foreach($images as $image){
             $data[]=[
                 'id'=>$image,
-                'src'=> Storage::url($image)
+                'src'=> AnnouncementImage::getUrlByFilePath($image, 120 , 120)
             ];
         }
 

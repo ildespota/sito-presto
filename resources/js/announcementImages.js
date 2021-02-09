@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         addRemoveLinks: true ,
         
-        init:function(){
+        init : function(){
+          let dropzone = this
           $.ajax({
               type: 'GET',
               url:'/announcement/images',
@@ -27,31 +28,33 @@ document.addEventListener('DOMContentLoaded', ()=>{
               let file ={
                 serverId:value.id
               };
-              myDropzone.options.addedfile.call(myDropzone,file);
-              myDropzone.options.thumbnail.call(myDropzone,file,value.src);
+              dropzone.options.addedfile.call(dropzone,file);
+              dropzone.options.thumbnail.call(dropzone,file,value.src);
+            });
+          });
+          
+          this.on("success", function(file, response){
+      
+             file.serverId = response.id;
+          }); 
+          
+          this.on("removedfile", function(file){
+            // alert('ciao');
+            $.ajax({
+              type: 'DELETE',
+              url: '/announcement/images/remove',
+              data: {
+               _token: csrftoken,
+               id: file.serverId,
+               uniqueSecret: uniqueSecret
+              },
+              dataType: 'json'
             });
           });
         }
     });
     
-     myDropzone.on("success", function(file, response){
 
-        file.serverId = response.id;
-     }); 
-
-     myDropzone.on("removedfile", function(file){
-       alert('ciao');
-       $ajax({
-         type: 'DELETE',
-         url: '/announcement/images/remove',
-         data: {
-          _token: csrftoken,
-          id: file.serverId,
-          uniqueSecret: uniqueSecret
-         },
-         dataType: 'json'
-       });
-     });
   }  
 
 })

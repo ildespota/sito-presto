@@ -58,17 +58,18 @@ class Announcement extends Model
 
     public function getCover()
     {
-        if(isset($this->announcementImages()->first()->file)){
-            return Storage::url($this->announcementImages()->first()->file);
+         if(isset($this->announcementImages()->first()->file)){
+           
+            return $this->announcementImages()->first()->getUrl(380,380);
         } else {
-            return Storage::url('public/img/default.png');
+            return Storage::url('public/img/default.jpeg');
         }
     }
 
     public function getCoverCarousel($i)
     {
         if(isset($this->announcementImages[$i]->file)){
-            return Storage::url($this->announcementImages[$i]->file);
+            return $this->announcementImages[$i]->getUrl(380,380);
         }
     }
 }
