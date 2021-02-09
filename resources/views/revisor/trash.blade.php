@@ -17,7 +17,7 @@
           @csrf
         <div class="row py-2">
               <div class="col-12 col-md-6 d-flex flex-column justify-content-around">
-                <img src="https://picsum.photos/200" class="img-fluid" alt="{{$announcement->title}}">
+                <img src="{{$announcement->getCover()}}" class="img-fluid" alt="{{$announcement->title}}">
     
               </div>
             <div class="col-12 col-md-6 pt-4 pt-md-0">

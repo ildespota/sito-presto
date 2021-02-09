@@ -1,4 +1,4 @@
-use Illuminate\Support\Facades\Auth;
+
         <!-- Footer -->
 <footer class="bg-nav text-center text-lg-start">
   <!-- Grid container -->

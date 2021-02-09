@@ -80,6 +80,13 @@ class AnnouncementController extends Controller
 
             ));
 
+            dispatch(new ResizeImage(
+                $newFileName, 
+                600,
+                500
+
+            ));
+
             $i->file=$newFileName;
 
             $i->announcement_id= $announcement->id;
@@ -98,8 +105,8 @@ class AnnouncementController extends Controller
         $filename=$request->file('file')->store("public/temp/{$uniqueSecret}");
         dispatch(new ResizeImage(
             $filename, 
-            80,
-            80
+            120,
+            120
 
         ));
 
@@ -134,7 +141,7 @@ class AnnouncementController extends Controller
         foreach($images as $image){
             $data[]=[
                 'id'=>$image,
-                'src'=> Storage::url($image)
+                'src'=> AnnouncementImage::getUrlByFilePath($image, 120 , 120)
             ];
         }
 
