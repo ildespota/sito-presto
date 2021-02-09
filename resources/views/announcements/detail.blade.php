@@ -48,12 +48,12 @@ title="{{$announcement->title}}"
         </div>
         <div class="row mt-5">
             <div class="col-12 col-md-4 mb-4 mb-md-0">
-                <p class="card-text">Inserito il {{$announcement->created_at->format('d-m-Y')}}</p>
-                <h6 class="lead">Prezzo: {{$announcement->price}} €</h6>
-                <p class="card-text">Autore: {{$announcement->user->name}}</p>
-                <p><span>Categoria: </span><a href= "{{route('announcement.category', $announcement->category)}}" class="card-text">{{$announcement->category->name}}</a></p>
+                <p class="card-text">{{__('ui.created_at')}}: {{$announcement->created_at->format('d-m-Y')}}</p>
+                <h6 class="lead">{{__('ui.announcementPrice')}}: {{$announcement->price}} €</h6>
+                <p class="card-text">{{__('ui.author')}} {{$announcement->user->name}}</p>
+                <p><span>{{__('ui.announcementCategory')}}: </span><a href= "{{route('announcement.category', $announcement->category)}}" class="card-text">{{$announcement->category->name}}</a></p>
                 {{-- <a href="" class="go-back">Dettaglio</a> --}}
-                <button type="button" onclick="history.back(-1)" class="btn btn-custom2">Torna indietro</button>
+                <button type="button" onclick="history.back(-1)" class="btn btn-custom2">{{__('ui.goBack')}}</button>
             </div>
             <div class="col-12 col-md-8">
               <p>{{$announcement->description}}</p>
