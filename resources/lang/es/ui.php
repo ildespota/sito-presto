@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'ads'=>'Aggiungis tuos annuncios',
+    'ads'=>'Colocar anuncio',
     'categories'=>'Categorias',
     'searchPlaceholder'=>'Ingresa una búsqueda',
     'searchButton'=>'Buscar',
