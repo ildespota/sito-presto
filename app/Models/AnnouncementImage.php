@@ -17,14 +17,15 @@ class AnnouncementImage extends Model
     }
 
     static public function getUrlByFilePath($filePath, $w = null, $h = null){
-        if(!$w && !$h){
+      
+        if(!$w && !$h){ 
             return Storage::url($filePath);
         }
 
         $path = dirname($filePath);
-        $fileName = basename($filePath);
+        $fileName = basename($filePath);        
         $file = "{$path}/crop{$w}x{$h}_{$fileName}";
-
+            // dd($filePath,$path,$fileName,$file);
         return Storage::url($file);
         
 
