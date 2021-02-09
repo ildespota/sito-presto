@@ -20,7 +20,11 @@ return [
     'detail' => 'More details',
     'author' => 'Author',
     'created_at' => 'Created at',
-    'goBack' => 'Go back'
+    'goBack' => 'Go back',
+    'titleThankyou' => 'Your announcement has been correctly inserted',
+    'subtitleThankyou' => 'Is going to be revisioned soon',
+    'titleNotallowed' => 'Error',
+    'subtitleNotallowed' => 'You are not allowed in this part of the website'
 
 
 

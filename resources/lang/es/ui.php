@@ -20,6 +20,10 @@ return [
     'detail' => 'Detalles',
     'author' => 'Autor',
     'created_at' => 'Creado en',
-    'goBack' => 'Vuelve'
+    'goBack' => 'Vuelve',
+    'titleThankyou' => 'Su anuncio se ha colocado correctamente',
+    'subtitleThankyou' => 'Y está pendiente de revisión',
+    'titleNotallowed' => 'Error',
+    'subtitleNotallowed' => 'No está autorizado para acceder a esta parte del sitio web'
 
 ];
