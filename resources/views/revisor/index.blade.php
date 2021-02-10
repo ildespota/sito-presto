@@ -17,8 +17,16 @@ title="revisori"
                                   <div class="card card-body">
                                       <img class="img-fluid" src="{{$announcement->getCoverCarousel($i)}}">
                                   </div>
+                                  <!-- <div class="card card-body">
+                                        <p>Adult:{{$announcement->announcementImages[$i]->adult}}</p>
+                                        <p>Spoof:{{$announcement->announcementImages[$i]->spoof}}</p>
+                                        <p>Medical:{{$announcement->announcementImages[$i]->medical}}</p>
+                                        <p>Violence:{{$announcement->announcementImages[$i]->violence}}</p>
+                                        <p>Racy:{{$announcement->announcementImages[$i]->racy}}</p>
+                                  </div> -->
                               </div>
                           </div>
+                
                         @endfor
                     </div>
                     <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
@@ -76,7 +84,7 @@ title="revisori"
                 
             </div>
             <div class="col-12 col-md-8">
-              <p>{{$announcement->description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae repudiandae, soluta qui iste amet, possimus, assumenda natus cumque perferendis modi enim culpa blanditiis? Sunt numquam sapiente modi eveniet! Eos possimus nihil aut magnam nisi fuga obcaecati doloribus ad distinctio. Totam ad esse eveniet aliquid optio necessitatibus corporis repellat neque, mollitia vitae nesciunt rem eius vero est, consequatur consectetur quidem quod iste ex numquam molestias, commodi illo architecto. Nesciunt voluptate aut vero nostrum, minima illo ut quibusdam iure provident itaque dicta doloribus obcaecati placeat accusamus! Ipsam reprehenderit ipsa omnis quidem voluptas ullam, quaerat accusantium recusandae. Quo nostrum quis eligendi facere veritatis laudantium magni ab nemo ad sapiente dolorem optio soluta nam omnis maiores, earum architecto. Perspiciatis delectus beatae eius itaque reiciendis iste possimus corrupti quos, maxime nobis voluptatum, deleniti harum sint molestias et ab minima eveniet sunt. Facere dolorem modi soluta veniam, commodi praesentium molestias consequatur ut culpa quibusdam nostrum molestiae laudantium repellat placeat odio hic qui animi excepturi vitae! Est, sed. Voluptate odit, facere delectus, enim omnis vitae minus atque tempore distinctio neque harum quo iste eius cum. Ea repudiandae omnis praesentium et illo, odio ratione vel, rem voluptatum ad iure, culpa soluta ex vero natus sapiente velit nesciunt nihil?</p>
+              <p>{{$announcement->description}}</p>
             </div>
         </div>
     </div>
