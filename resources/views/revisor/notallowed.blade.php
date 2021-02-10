@@ -8,8 +8,8 @@
             <h1><i class="fas fa-5x fa-times"></i></h1>
         </div>
         <div class="col-12 col-md-7 mb-5">
-            <p class="h1">Errore</p>
-            <p>Non sei autorizzato ad accedere a questa parte del sito</p>
+            <p class="h1">{{__('ui.titleNotallowed')}}</p>
+            <p>{{__('ui.subtitleNotallowed')}}</p>
         </div>
     </div>
 </div>

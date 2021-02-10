@@ -4,7 +4,7 @@
 <div class="container mt-5">
     <div class="row justify-content-between">
         <div class="col-12 col-md-4 box3">
-            <h1>Inserisci un nuovo annuncio</h1>
+            <h1>{{__('ui.ads')}}</h1>
             <h1><i class="fas fa-arrow-right"></i></h1>
         </div>
         <div class="col-12 col-md-7 mb-5">
@@ -22,11 +22,11 @@
                   </div>
                 @endif
                 <div class="form-group">
-                    <label>Titolo</label>
-                    <input type="text" name="title" class="form-control"  aria-describedby="titolo annuncio" placeholder="titolo annuncio" value="{{old('title')}}">
+                    <label>{{__('ui.announcementTitle')}}</label>
+                    <input type="text" name="title" class="form-control"  aria-describedby="titolo annuncio" value="{{old('title')}}">
                 </div>
                 <div class="form-group">
-                    <label>Categoria</label>
+                    <label>{{__('ui.announcementCategory')}}</label>
                     <select name="category">
                         <option value="" class="form-control" selected="selected"></option>
                         @foreach ($categories as $category)
@@ -35,16 +35,16 @@
                     </select>
                 </div>
                 <div class="form-group">
-                <label>Descrizione</label>
+                <label>{{__('ui.announcementDescription')}}</label>
                 <textarea class="form-control" name="description" id="" cols="80" rows="10">{{old('description')}}</textarea>
                 </div>
                 <div class="form-group">
-                    <label>Prezzo</label>
-                    <input type="number" name="price" class="form-control"  aria-describedby="prezzo annuncio" placeholder="prezzo annuncio" value="{{old('price')}}">
+                    <label>{{__('ui.announcementPrice')}}</label>
+                    <input type="number" name="price" class="form-control"  aria-describedby="prezzo annuncio" value="{{old('price')}}">
                 </div>
 
                 <div class="form-group row">
-                <label for="images">Immagini</label>
+                <label for="images">{{__('ui.announcementImage')}}</label>
                 
                 <div class="col-md-12">
                     <div class="dropzone" id="drophere"></div>
@@ -58,7 +58,7 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-custom">Inserisci</button>
+                <button type="submit" class="btn btn-custom">{{__('ui.announcementInsert')}}</button>
             </form>
         </div>
         </div>

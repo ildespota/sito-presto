@@ -17,7 +17,7 @@
                     <a class="nav-link {{(Route::currentRouteName()=='announcement.create') ? 'active-navbar' : ' '}} " href="{{ route('announcement.create') }}">{{__('ui.ads')}}</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a id="categoryDropdown" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Categorie</a>
+                    <a id="categoryDropdown" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{__('ui.categories')}}</a>
                 
                 <div class="dropdown-menu dropdown-menu-right bg-nav" for="categoryDropdown">
                     <ul class="list-unstyled">
@@ -37,9 +37,9 @@
                 <li> 
                     <form action="{{route('announcement.search')}}" method="GET"> 
                     @csrf
-                        <input type="text" placeholder="Effettua una ricerca" name="q"> 
+                        <input type="text" placeholder="{{__('ui.searchPlaceholder')}}" name="q"> 
 
-                                <button class="btn btn-secondary" type="submit">Cerca</button>
+                                <button class="btn btn-secondary" type="submit">{{__('ui.searchButton')}}</button>
                                 
                     </form>
                  </li>
@@ -53,7 +53,7 @@
                     >{{\App\Models\Announcement::toBeRevisioned()}}</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{(Route::currentRouteName()=='revisor.trash') ? 'active-navbar' : ' '}} " href="{{ route('revisor.trash') }}">Cestino</a>
+                <a class="nav-link {{(Route::currentRouteName()=='revisor.trash') ? 'active-navbar' : ' '}} " href="{{ route('revisor.trash') }}">Trash</a>
             </li>
             @endif
          
@@ -61,13 +61,13 @@
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link {{(Route::currentRouteName()=='login') ? 'active-navbar' : ' '}} " href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link {{(Route::currentRouteName()=='login') ? 'active-navbar' : ' '}} " href="{{ route('login') }}">{{__('ui.login')}}</a>
                         </li>
                     @endif
                     
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link {{(Route::currentRouteName()=='register') ? 'active-navbar' : ' '}} " href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link {{(Route::currentRouteName()=='register') ? 'active-navbar' : ' '}} " href="{{ route('register') }}">{{__('ui.register')}}</a>
                         </li>
                     @endif
                 @else

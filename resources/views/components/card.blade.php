@@ -13,7 +13,7 @@
           <h5 class="lead">{{$price}}</h5>
 
           <div class="col d-flex justify-content-end">
-          <a href="{{route('announcement.show', $announcement)}}" class="btn btn-custom2 rounded">Dettaglio</a>
+          <a href="{{route('announcement.show', $announcement)}}" class="btn btn-custom2 rounded">{{__('ui.detail')}}</a>
         </div> 
       </div>
     </div>
