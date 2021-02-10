@@ -16,6 +16,7 @@
             name="{{$announcement->category->name}}"
             price="{{$announcement->price}}"
             category="{{$announcement->category->id}}"
+            image="{{$announcement->getCover()}}"
             />        
         @endforeach
 
