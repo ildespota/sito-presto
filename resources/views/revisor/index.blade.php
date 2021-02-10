@@ -11,19 +11,20 @@ title="revisori"
                   @if(count($announcement->announcementImages)>0)
                   <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
                     <div class="carousel-inner w-100" role="listbox">
-                        @for($i = 0; $i<count($announcement->announcementImages); $i++)
+                        @for($i = 0; $i<count($announcement -> announcementImages); $i++)
                           <div class="carousel-item @if($i == 0) active @endif">
                               <div class="col-md-4">
                                   <div class="card card-body">
                                       <img class="img-fluid" src="{{$announcement->getCoverCarousel($i)}}">
                                   </div>
-                                  <!-- <div class="card card-body">
+                                  <div class="card card-body">
+                                  {{dd($announcement->announcementImages[$i])}}
                                         <p>Adult:{{$announcement->announcementImages[$i]->adult}}</p>
                                         <p>Spoof:{{$announcement->announcementImages[$i]->spoof}}</p>
                                         <p>Medical:{{$announcement->announcementImages[$i]->medical}}</p>
                                         <p>Violence:{{$announcement->announcementImages[$i]->violence}}</p>
                                         <p>Racy:{{$announcement->announcementImages[$i]->racy}}</p>
-                                  </div> -->
+                                  </div>
                               </div>
                           </div>
                 
