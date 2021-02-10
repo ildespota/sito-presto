@@ -23,7 +23,7 @@
 
         <ul class="list-unstyled mb-0">
           <li>
-            <a href="@if (Auth::user()) {{route('revisor.create')}} @else {{route('login')}}  @endif" class="text-white">Lavora con noi</a>
+            <a href="@if (Auth::user()) {{route('revisor.create')}} @else {{route('login')}}  @endif" class="text-white">{{__('ui.work')}}</a>
           </li>
           <li>
             <a href="#!" class="text-white">Cookie Policy</a>

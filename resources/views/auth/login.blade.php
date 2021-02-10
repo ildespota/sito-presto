@@ -5,7 +5,7 @@
     <div class="container mt-5">
         <div class="row justify-content-between">
             <div class="col-12 col-md-4 box3 text-light">
-                <div class="h1">{{ __('Login') }}</div>
+                <div class="h1">{{__('ui.login')}}</div>
                 <div class="h1"><i class="fas fa-arrow-right"></i></div>
             </div>
             <div class="col-12 col-md-7">
@@ -13,7 +13,7 @@
                     @csrf
 
                     <div class="form-group row">
-                        <label for="email">{{ __('E-Mail Address') }}</label>
+                        <label for="email">{{ __('E-Mail') }}</label>
 
                         
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -55,7 +55,7 @@
                     <div class="form-group row mb-0">
                         
                             <button type="submit" class="btn btn-custom">
-                                {{ __('Login') }}
+                                {{__('ui.login')}}
                             </button>
 
                             @if (Route::has('password.request'))
