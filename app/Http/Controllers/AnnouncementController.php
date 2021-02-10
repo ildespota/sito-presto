@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Models\AnnouncementImage;
+use App\Jobs\GoogleVisionLabelImage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Http\Requests\AnnouncementRequest;
-use App\Jobs\ResizeImage;
 
 class AnnouncementController extends Controller
 {
@@ -92,6 +94,8 @@ class AnnouncementController extends Controller
             $i->save();
 
             dispatch(new GoogleVisionSafeSearchImage($i->id));
+            
+            // dispatch(new GoogleVisionLabelImage($i->id));
         }
 
         File::deleteDirectory(storage_path('/app/public/temp/{$uniqueSecret}'));
