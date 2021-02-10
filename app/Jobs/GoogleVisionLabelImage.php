@@ -9,6 +9,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
 class GoogleVisionLabelImage implements ShouldQueue
 {
@@ -44,7 +45,7 @@ class GoogleVisionLabelImage implements ShouldQueue
         $image=file_get_contents(storage_path('/app/'. $i->file ));
         putenv('GOOGLE_APPLICATION_CREDENTIAL=' . base_path('google_credential.json'));
 
-        $imageAnnotator= new ImageAnnotetorClient();
+        $imageAnnotator= new ImageAnnotatorClient();
         $response=$imageAnnotator->labelDetection($image);
 
         $labels=$response->getLabelAnnotations();
