@@ -86,7 +86,6 @@ class AnnouncementController extends Controller
                 500
 
             ));
-
             $i->file=$newFileName;
 
             $i->announcement_id= $announcement->id;
