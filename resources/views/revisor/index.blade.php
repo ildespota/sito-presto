@@ -18,7 +18,7 @@ title="revisori"
                                       <img class="img-fluid" src="{{$announcement->getCoverCarousel($i)}}">
                                   </div>
                                   <div class="card card-body">
-                                  {{dd($announcement->announcementImages[$i])}}
+                                  
                                         <p>Adult:{{$announcement->announcementImages[$i]->adult}}</p>
                                         <p>Spoof:{{$announcement->announcementImages[$i]->spoof}}</p>
                                         <p>Medical:{{$announcement->announcementImages[$i]->medical}}</p>
