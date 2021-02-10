@@ -3,11 +3,13 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
+use App\Models\AnnouncementImage;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldBeUnique;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
 class GoogleVisionSafeSearchImage implements ShouldQueue
 {
@@ -28,7 +30,7 @@ class GoogleVisionSafeSearchImage implements ShouldQueue
         if(!$i){
             return ;
         }
-        $image=file_get_contents(storage('/app/' . $i->file));
+        $image=file_get_contents(storage_path('/app/' . $i->file));
 
         putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
 
@@ -45,6 +47,7 @@ class GoogleVisionSafeSearchImage implements ShouldQueue
         $racy = $safe->getRacy();
 
         //echo json_encode([$adult,$medical,$spoof,$violence,$racy]);
+        
 
         $likelihoodName = [
             'UNKNOWN', 'VERY_UNLIKELY','UNLIKELY','POSSIBLE','LIKELY','VERY_LIKELY'
