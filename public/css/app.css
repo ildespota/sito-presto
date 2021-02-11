@@ -10008,7 +10008,7 @@ h3 {
   --green: rgb(53,228,176);
   --blue: rgb(1,9,69);
   --violet: rgb(97,104,250);
-  --white: white;
+  --white: rgba(255,255,255);
 }
 
 .text-white {
@@ -10049,7 +10049,7 @@ main {
 .box {
   position: relative;
   padding: 40px;
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 5px 5px 0px var(--violet);
 }
 
