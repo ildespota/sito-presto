@@ -70,14 +70,26 @@
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link text-white-nav dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} 
-                            @if (Auth::user() && Auth::user()->is_revisor)
+                            @if ((Auth::user() && Auth::user()->is_revisor) || (Auth::user() && Auth::user()->is_admin))
                                 <span class="badge-pill bg-green">{{\App\Models\Announcement::toBeRevisioned()}}</span>
                             @endif
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right bg-nav" aria-labelledby="navbarDropdown">
                             <ul class="list-unstyled">
-                                @if (Auth::user() && Auth::user()->is_revisor)
+                                @if(Auth::user() && Auth::user()->is_admin)
+                                    <li class="nav-item pl-2 d-none d-lg-block">
+                                        <a class="nav-link text-white-nav" data-toggle="modal" data-target="#permissionModal">
+                                            Gestisci permessi
+                                        </a>
+                                    </li> 
+                                    <li class="nav-item pl-2 d-block d-lg-none">
+                                        <a href="{{route('admin.permissions')}}" class="nav-link text-white-nav">
+                                            Gestisci permessi
+                                        </a>
+                                    </li> 
+                                @endif
+                                @if ((Auth::user() && Auth::user()->is_revisor) || (Auth::user() && Auth::user()->is_admin))
                                     <li class="nav-item pl-2">
                                         <a class="nav-link text-white-nav {{(Route::currentRouteName()=='revisor.index') ? 'active-navbar' : ' '}} " href="{{ route('revisor.index') }}">Revisor Home 
                                             <span class="badge-pill bg-green">{{\App\Models\Announcement::toBeRevisioned()}}</span>
@@ -124,3 +136,73 @@
         </div>
     </div>
 </div>
+
+{{-- Modale --}}
+<div class="modal fade" id="permissionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Gestione permessi</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Revisore</th>
+                        <th>Rendi Revisore</th>
+                        <th>Cancella Revisore</th>
+                        <th>Admin</th>
+                        <th>Rendi admin</th>
+                        <th>Cancella admin</th>
+                    </tr>
+                    @foreach ($users as $user)
+                      <tr>
+                          <td>{{$user->name}}</td>
+                          <td class="@if($user->is_revisor) bg-success @else bg-danger @endif"></td>
+                          <td>
+                              <form action="{{route('make.revisor', $user->id)}}" method="POST">
+                                  @csrf
+                                  @method('PUT')
+                                  <button type="submit" class="btn btn-success">Rendi revisore</button>
+                              </form>
+                          </td>
+                          <td>
+                              <form action="{{route('cancel.revisor', $user->id)}}" method="POST">
+                                  @csrf
+                                  @method('PUT')
+                                  <button type="submit" class="btn btn-danger">Cancella revisore</button>
+                              </form>
+                          </td>
+                          <td class="@if($user->is_admin) bg-success @else bg-danger @endif"></td>
+                          <td>
+                              <form action="{{route('make.admin', $user->id)}}" method="POST">
+                                  @csrf
+                                  @method('PUT')
+                                  <button type="submit" class="btn btn-success">Rendi amministratore</button>
+                              </form>
+                          </td>
+                          <td>
+                              <form action="{{route('cancel.admin', $user->id)}}" method="POST">
+                                  @csrf
+                                  @method('PUT')
+                                  <button type="submit" class="btn btn-danger">Cancella amministratore</button>
+                              </form>
+                          </td>
+                      </tr>
+                    @endforeach
+                </table>
+              </div>
+          </div>
+        </div>
+        {{-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> --}}
+      </div>
+    </div>
+  </div>

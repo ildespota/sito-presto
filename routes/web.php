@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -49,3 +50,9 @@ Route::delete('/announcement/images/remove',[AnnouncementController::class,'remo
 Route::get('/announcement/images',[AnnouncementController::class,'getImages'])->name('announcement.images');
 
 Route::post('/locale/{locale}',[HomeController::class,'locale'])->name('locale');
+
+Route::get('/user/permissions',[AdminController::class,'getPermissions'])->name('admin.permissions');
+Route::put('user/revisor/{id}', [AdminController::class, 'makeRevisor'])->name('make.revisor');
+Route::put('user/admin/{id}', [AdminController::class, 'makeAdmin'])->name('make.admin');
+Route::put('user/revisor/delete/{id}', [AdminController::class, 'cancelRevisor'])->name('cancel.revisor');
+Route::put('user/admin/delete/{id}', [AdminController::class, 'cancelAdmin'])->name('cancel.admin');

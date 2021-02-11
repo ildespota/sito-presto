@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use App\Models\Category;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
@@ -34,5 +35,9 @@ class AppServiceProvider extends ServiceProvider
         }
        
        Paginator::useBootstrap();
+
+       $users = User::all();
+       View::share('users', $users);
+
     }
 }
