@@ -28,6 +28,7 @@ if(tornaSu){
 
 
 /* carosello */
+if(document.querySelector('#recipeCarousel')){
 $('#recipeCarousel').carousel({
     interval: 10000
   })
@@ -49,8 +50,10 @@ $('#recipeCarousel').carousel({
           next.children(':first-child').clone().appendTo($(this));
         }
   });
+}
 
   /* Redirect thankyou page */
+  if(document.querySelector('#thankyou')){
 
   let thankyou = document.querySelector('#thankyou');
 
@@ -63,9 +66,10 @@ $('#recipeCarousel').carousel({
 
     }, 3000);
 }
+  }
 
 /* Redirect not allowed */
-
+if(document.querySelector('#notallowed')){
 let notallowed = document.querySelector('#notallowed');
 
 if(notallowed){
@@ -77,7 +81,7 @@ if(notallowed){
 
 }, 3000);
 }
-
+}
 
 // gestione input search 
 
