@@ -95,7 +95,7 @@ class AnnouncementController extends Controller
 
             dispatch(new GoogleVisionSafeSearchImage($i->id));
             
-            // dispatch(new GoogleVisionLabelImage($i->id));
+            dispatch(new GoogleVisionLabelImage($i->id));
         }
 
         File::deleteDirectory(storage_path('/app/public/temp/{$uniqueSecret}'));

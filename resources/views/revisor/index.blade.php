@@ -19,12 +19,22 @@ title="revisori"
                                   </div>
                                   <div class="card card-body">
                                   
-                                        <p>Adult:{{$announcement->announcementImages[$i]->adult}}</p>
-                                        <p>Spoof:{{$announcement->announcementImages[$i]->spoof}}</p>
-                                        <p>Medical:{{$announcement->announcementImages[$i]->medical}}</p>
-                                        <p>Violence:{{$announcement->announcementImages[$i]->violence}}</p>
-                                        <p>Racy:{{$announcement->announcementImages[$i]->racy}}</p>
+                                        <p class="{{$announcement->getBackground($announcement->announcementImages[$i]->adult)}}">Adult:{{$announcement->announcementImages[$i]->adult}}</p>
+                                        <p class="{{$announcement->getBackground($announcement->announcementImages[$i]->spoof)}}">Spoof:{{$announcement->announcementImages[$i]->spoof}}</p>
+                                        <p class="{{$announcement->getBackground($announcement->announcementImages[$i]->medical)}}">Medical:{{$announcement->announcementImages[$i]->medical}}</p>
+                                        <p class="{{$announcement->getBackground($announcement->announcementImages[$i]->violence)}}">Violence:{{$announcement->announcementImages[$i]->violence}}</p>
+                                        <p class="{{$announcement->getBackground($announcement->announcementImages[$i]->racy)}}">Racy:{{$announcement->announcementImages[$i]->racy}}</p>
                                   </div>
+                                  <div class="card card-body">
+                                  
+                                    <ul>
+                                        @if($announcement->announcementImages[$i]->labels)
+                                            @foreach ($announcement->announcementImages[$i]->labels as $label)
+                                                <li>{{$label}}</li>
+                                            @endforeach
+                                        @endif
+                                    </ul>
+                              </div>
                               </div>
                           </div>
                 
