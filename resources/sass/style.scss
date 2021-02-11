@@ -75,6 +75,15 @@ main{
 }
 
 /* navbar */
+.text-white-nav{
+    color: var(--white) !important;
+    transition: 0.2s;
+}
+
+.text-white-nav:hover{
+    transform: scale(1.1);
+}
+
 .bg-nav{
     background-color: var(--blue);
     color:var(--white);
@@ -90,6 +99,25 @@ main{
 .bg-green{
     background-color: var(--green);
     color: black;
+}
+
+.border-search{
+    border-bottom: 2px solid var(--white) !important;
+}
+
+.bg-violet{
+    background-color: var(--violet);
+    color: var(--blue);
+
+}
+
+#search-mobile::placeholder{
+    color: var(--white);
+    text-align: center;
+}
+
+#input-search::placeholder{
+    color: var(--white);
 }
 
 
