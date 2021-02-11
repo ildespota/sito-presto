@@ -10087,6 +10087,11 @@ main {
   border-bottom: 4px solid var(--green);
 }
 
+.bg-green {
+  background-color: var(--green);
+  color: black;
+}
+
 /* pagina form */
 .box3 {
   position: relative;

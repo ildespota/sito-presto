@@ -47,15 +47,7 @@
 
 
             <ul class="navbar-nav ml-auto">
-            @if (Auth::user() && Auth::user()->is_revisor)
-            <li class="nav-item">
-                <a class="nav-link {{(Route::currentRouteName()=='revisor.index') ? 'active-navbar' : ' '}} " href="{{ route('revisor.index') }}">Revisor Home <span class="badge-pill badge-warning"
-                    >{{\App\Models\Announcement::toBeRevisioned()}}</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{(Route::currentRouteName()=='revisor.trash') ? 'active-navbar' : ' '}} " href="{{ route('revisor.trash') }}">Trash</a>
-            </li>
-            @endif
+            
          
                 <!-- Authentication Links -->
                 @guest
@@ -73,11 +65,22 @@
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
+                            {{ Auth::user()->name }} 
+                            @if (Auth::user() && Auth::user()->is_revisor)
+                                <span class="badge-pill bg-green">{{\App\Models\Announcement::toBeRevisioned()}}</span>
+                            @endif
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right bg-nav" aria-labelledby="navbarDropdown">
                             <ul class="list-unstyled">
+                                @if (Auth::user() && Auth::user()->is_revisor)
+                                    <li class="nav-item">
+                                        <a class="nav-link {{(Route::currentRouteName()=='revisor.index') ? 'active-navbar' : ' '}} " href="{{ route('revisor.index') }}">Revisor Home </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{(Route::currentRouteName()=='revisor.trash') ? 'active-navbar' : ' '}} " href="{{ route('revisor.trash') }}">Trash</a>
+                                    </li>
+                                @endif
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
@@ -86,6 +89,7 @@
                             </a>
                                 </li>
                             </ul>
+                            
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
