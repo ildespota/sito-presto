@@ -56,7 +56,7 @@
 
   {{-- Header per mobile --}}
 
- {{--  <header class="d-block d-md-none masthead-mobile" style="background-image: url('/img/game.jpg')">
+   <header class="d-block d-md-none masthead-mobile" style="background-image: url('/img/game.jpg')">
     <div class="container-fluid h-100">
       <div class="row align-items-end h-100">
         <div class="col-12 col-md-6 box">
@@ -68,7 +68,7 @@
   </header>
 
   <div class="container-fluid my-5">
-    <div class="row justify-content-around mx-2 "> --}}
+    <div class="row justify-content-around mx-2 "> 
     
       
 
