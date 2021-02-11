@@ -1,4 +1,4 @@
-const Dropzone = require("dropzone");
+const Dropzone = require("dropzone"); 
 document.addEventListener('DOMContentLoaded', ()=>{   
 
   if($("#drophere").length>0) {
