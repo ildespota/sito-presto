@@ -2,7 +2,7 @@
     title="Risultati ricerca"
 >
 
-<h1 class="">I risultati della tua ricerca per: {{$q}}</h1>
+<h1 class="text-center mt-5">I risultati della tua ricerca per: {{$q}}</h1>
 
   <div class="container-fluid my-5">
     <div class="row justify-content-around mx-2 ">

@@ -77,3 +77,13 @@ if(notallowed){
 
 }, 3000);
 }
+
+
+// gestione input search 
+
+    let searchButton = document.querySelector('#search-btn');
+    searchButton.addEventListener("click", function() {
+        
+        let inputSearch = document.querySelector('#input-search');
+        inputSearch.classList.toggle('d-none')
+    })
