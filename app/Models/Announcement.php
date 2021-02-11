@@ -72,4 +72,14 @@ class Announcement extends Model
             return $this->announcementImages[$i]->getUrl(380,380);
         }
     }
+
+    public function getBackground($text){
+        if($text == 'LIKELY'){
+            return 'bg-warning';
+        } elseif($text == 'VERY_LIKELY'){
+            return 'bg-danger text-white';
+        } else{
+            return '';
+        }
+    }
 }
