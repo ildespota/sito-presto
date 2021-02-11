@@ -87,6 +87,11 @@ main{
     border-bottom: 4px solid var(--green);
 }
 
+.bg-green{
+    background-color: var(--green);
+    color: black;
+}
+
 
 /* pagina form */
 .box3{
@@ -163,3 +168,4 @@ main{
     background-color: var(--white);
     box-shadow: 5px 5px  0px var(--violet);
 }
+
