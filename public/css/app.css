@@ -10011,6 +10011,10 @@ h3 {
   --white: rgba(255,255,255);
 }
 
+body {
+  background-color: var(--white);
+}
+
 .text-white {
   color: var(--white);
 }
@@ -10214,6 +10218,10 @@ main {
 /* TABELLE */
 table {
   overflow-x: hidden;
+}
+
+.descriptionRevisor {
+  font-size: 15px;
 }
 
 /*!

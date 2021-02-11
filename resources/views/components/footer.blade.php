@@ -23,38 +23,33 @@
 
         <ul class="list-unstyled mb-0">
           <li>
-            <a href="@if (Auth::user()) {{route('revisor.create')}} @else {{route('login')}}  @endif" class="text-white">{{__('ui.work')}}</a>
+            <a  href="@if (Auth::user()) {{route('revisor.create')}} @else {{route('login')}}  @endif" class="text-white text-decoration-none">{{__('ui.work')}}</a>
           </li>
           <li>
-            <a href="#!" class="text-white">Cookie Policy</a>
+            <a href="#!" class="text-white text-decoration-none">Cookie Policy</a>
           </li>
           <li>
-            <a href="#!" class="text-white">Privacy Policy</a>
+            <a href="#!" class="text-white text-decoration-none">Privacy Policy</a>
           </li>
-          <li>
+          <li class=" d-flex justify-content-center">
                 <x-flag
                   lang="it"
                   flag="it"
                 
                 />
-
-          </li>
-
-          <li>
-                
                 <x-flag
                   lang="en"
                   flag="gb"
                 
                 />
-          </li>
-          <li>
-          <x-flag
+                <x-flag
                   lang="es"
                   flag="es"
                 
                 />
+
           </li>
+
         </ul>
       </div>
       <!--Grid column-->
@@ -65,10 +60,10 @@
 
         <ul class="list-unstyled">
           <li>
-            <a href="http:\\www.facebook.com" target="_blank" class="text-white"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="http:\\www.facebook.com" target="_blank" class="text-white text-decoration-none"><i class="fab fa-facebook"></i> Facebook</a>
           </li>
           <li>
-            <a href="http:\\www.instagram.com" target="_blank" class="text-white"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="http:\\www.instagram.com" target="_blank" class="text-white text-decoration-none"><i class="fab fa-instagram"></i> Instagram</a>
           </li>
         </ul>
       </div>
@@ -79,7 +74,7 @@
   <!-- Grid container -->
 
   <!-- Copyright -->
-  <div class="bg-nav text-center p-3">
+  <div class="bg-violet text-center text-white p-3 ">
     © 2021 Copyright:
     <a class="text-white">Class-1 Casa de papel © </a>
   </div>
