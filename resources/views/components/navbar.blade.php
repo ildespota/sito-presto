@@ -2,6 +2,7 @@
     <div class="container-fluid">
         <a class="navbar-brand text-white" href="{{ url('/') }}">
             <i class="fab fa-accessible-icon text-white"></i> PRESTO
+            {{-- <img src="/img/logo.png" class="img-fluid" alt="" id="logo"> --}}
         </a>
         <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <i class="fas fa-bars text-white"></i>

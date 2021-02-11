@@ -82,4 +82,20 @@ class Announcement extends Model
             return '';
         }
     }
+
+    public function deleteAnnouncement()
+    {
+        //cancellare le imagini
+        if(count($this->announcementImages) > 0){
+
+            $this->announcementImages->each(
+                function($image){
+                    $image->delete();
+                }
+            );
+            Storage::deleteDirectory("/public/announcements/{$this->id}");
+        }
+        $this->delete();
+        return $this->id;
+    }
 }

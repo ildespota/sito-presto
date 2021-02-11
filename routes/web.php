@@ -52,7 +52,9 @@ Route::get('/announcement/images',[AnnouncementController::class,'getImages'])->
 Route::post('/locale/{locale}',[HomeController::class,'locale'])->name('locale');
 
 Route::get('/user/permissions',[AdminController::class,'getPermissions'])->name('admin.permissions');
-Route::put('user/revisor/{id}', [AdminController::class, 'makeRevisor'])->name('make.revisor');
-Route::put('user/admin/{id}', [AdminController::class, 'makeAdmin'])->name('make.admin');
-Route::put('user/revisor/delete/{id}', [AdminController::class, 'cancelRevisor'])->name('cancel.revisor');
-Route::put('user/admin/delete/{id}', [AdminController::class, 'cancelAdmin'])->name('cancel.admin');
+Route::put('/user/revisor/{id}', [AdminController::class, 'makeRevisor'])->name('make.revisor');
+Route::put('/user/admin/{id}', [AdminController::class, 'makeAdmin'])->name('make.admin');
+Route::put('/user/revisor/delete/{id}', [AdminController::class, 'cancelRevisor'])->name('cancel.revisor');
+Route::put('/user/admin/delete/{id}', [AdminController::class, 'cancelAdmin'])->name('cancel.admin');
+
+Route::delete('/announcement/{announcement}/destroy', [RevisorController::class, 'destroyAnnouncement'])->name('announcement.destroy');

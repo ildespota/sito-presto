@@ -7,6 +7,15 @@
       <div class="col-12">
       <h1 class="text-center">Cestino</h1>
       </div>
+      <div class="col-12">
+        @if(Session::has('message'))
+        <div class="alert alert-danger">
+          <ul>
+              <li>{{Session::get('message')}}</li>
+          </ul>
+      </div>
+        @endif
+      </div>
     </div>
     <div class="row justify-content-around mx-2 ">
      
@@ -30,6 +39,11 @@
           </div>
         </div>
         <button type="submit" class="btn btn-success my-2">Ripristina</button>
+      </form>
+      <form action="{{route('announcement.destroy', $announcement)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger my-2">Elimina</button>
       </form>
     </div>
   

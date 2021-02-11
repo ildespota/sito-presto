@@ -46,5 +46,11 @@ class RevisorController extends Controller
         return $this->setAccepted($announcement_id,null);
     }
 
+    public function destroyAnnouncement(Announcement $announcement)
+    {
+        $id = $announcement->deleteAnnouncement();
+        return redirect()->back()->with('message', "L'annuncio n $id e' stato cancellato definitivamente, RIP.");
+    }
+
 }
 
