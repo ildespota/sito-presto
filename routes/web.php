@@ -58,3 +58,5 @@ Route::put('/user/revisor/delete/{id}', [AdminController::class, 'cancelRevisor'
 Route::put('/user/admin/delete/{id}', [AdminController::class, 'cancelAdmin'])->name('cancel.admin');
 
 Route::delete('/announcement/{announcement}/destroy', [RevisorController::class, 'destroyAnnouncement'])->name('announcement.destroy');
+
+Route::delete('/announcement/user/{announcement}/destroy', [AnnouncementController::class, 'userDestroyAnnouncement'])->name('announcement.delete');

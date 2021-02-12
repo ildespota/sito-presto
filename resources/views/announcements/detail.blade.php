@@ -61,4 +61,43 @@ title="{{$announcement->title}}"
         </div>
   </div>
 
+    @if(Auth::id() == $announcement -> user_id)
+    
+    <div class="container">
+      <div class="row mb-3">
+        <div class="col-12 col-md-3 mt-2">
+          <button class="btn btn-warning">Modifica il tuo annuncio</button>
+        </div>
+  
+        <div class="col-12 col-md-3 mt-2">
+          <button class="btn btn-danger" data-toggle="modal" data-target="#destroyusermodal" type="button">Cancella il tuo annuncio</button>
+        </div>
+      </div>
+    </div>
+    @endif
+
+    <div class="modal" tabindex="-1" id="destroyusermodal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Attenzione</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Sei sicuro di voler cancellare il tuo annuncio?</p>
+          </div>
+          <div class="modal-footer">
+            <form action="{{route('announcement.delete', $announcement)}}" method="POST"> 
+              @method('DELETE')
+              @csrf
+              <button type="submit" class="btn btn-danger">Elimina</button>
+            </form>
+            <button type="button" class="btn btn-success" data-dismiss="modal">Torna indietro</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     </x-layout>

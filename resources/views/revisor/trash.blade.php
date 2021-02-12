@@ -35,27 +35,59 @@
               <p class="card-text">{{$announcement->created_at->format('d-m-Y')}}</p>
               <p class="card-text">{{$announcement->category->name}}</p>
               <h5 class="lead">{{$announcement->price}}</h5>
-              <!-- <a href="{{route('announcement.show', $announcement)}}" class="btn btn-custom2 rounded">Dettaglio</a> -->
+               {{-- <a href="{{route('announcement.show', $announcement)}}" class="btn btn-custom2 rounded">Dettaglio</a>  --}}
           </div>
         </div>
         <button type="submit" class="btn btn-success my-2">Ripristina</button>
       </form>
+      <div>
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#destroymodal">Elimina definitivamente
+      </button>
+      </div>      
+  
+      <!-- <form action="{{route('announcement.destroy', $announcement)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger my-2">Elimina</button>
+      </form> -->
+    </div>
+  
+
+    <div class="modal" id="destroymodal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-center">
+        <h5 class="modal-title text-center d-flex" >ATTENZIONE!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Sei sicuro di cancellare definitivamente l'annuncio?</p>
+      </div>
+      <div class="modal-footer">
       <form action="{{route('announcement.destroy', $announcement)}}" method="POST">
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger my-2">Elimina</button>
       </form>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Ritorna indietro</button>
+      </div>
     </div>
-  
+  </div>
+</div>
+
         @endforeach
 
       
     </div>
-    <div class="row m-5 justify-content-center">
+    {{-- <div class="row m-5 justify-content-center">
       <div class="">
         {!! $announcements->links() !!}
       </div>
-    </div>
+    </div> --}}
   </div>
+
+  
 
 </x-layout>
