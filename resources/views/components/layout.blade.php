@@ -21,11 +21,17 @@
     <main>
         {{$slot}}
     </main>
+    {{-- Freccia torna su  --}}
+    <div id="tornasu" class="mb-3 justify-content-end d-none d-lg-flex">
+        <i class="fas fa-arrow-circle-up tornasu fa-3x text-violet" width="60px" height="60px"></i>
+    </div> 
+    {{-- freccia torna su mobile --}}
+    <div id="tornasuMobile" class="mb-3 justify-content-end d-flex d-lg-none">
+        <i class="fas fa-arrow-circle-up tornasu fa-3x text-violet" width="60px" height="60px"></i>
+    </div> 
     <x-footer/>
-    {{-- Freccia torna su --}}
-    {{-- <div id="tornasu" class="mb-3">
-        <i class="fas fa-arrow-circle-up tornasu fa-3x" width="60px" height="60px"></i>
-    </div> --}}
+     
+     
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
