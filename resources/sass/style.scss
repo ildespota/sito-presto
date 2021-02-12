@@ -4,6 +4,10 @@
     --violet: rgb(97,104,250);
     --white: rgba(255,255,255);
 }
+body{
+    background-color: var(--white);
+
+}
 .text-white{
     color:var(--white);
 }
@@ -201,4 +205,8 @@ main{
 
 table{
     overflow-x: hidden;
+}
+
+.descriptionRevisor {
+font-size: 15px;
 }
