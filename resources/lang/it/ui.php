@@ -16,7 +16,7 @@ return [
     'announcementDescription' => 'Descrizione',
     'announcementPrice' => 'Prezzo',
     'announcementImage' => 'Immagini',
-    'announcementInsert' => 'Inserisci',
+    'announcementInsert' => 'Inserisci un nuovo annuncio',
     'detail' => 'Dettaglio',
     'author' => 'Autore',
     'created_at' => 'Creato il',

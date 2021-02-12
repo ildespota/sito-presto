@@ -18362,7 +18362,7 @@ body {
 #tornasu {
   position: fixed;
   top: 80%;
-  width: 100%;
+  width: 5%;
   right: 10px;
   z-index: 999;
 }
@@ -18370,8 +18370,8 @@ body {
 #tornasuMobile {
   position: relative;
   top: 10px;
-  width: 100%;
-  right: 10px;
+  width: 5%;
+  left: 90%;
   z-index: 999;
 }
 

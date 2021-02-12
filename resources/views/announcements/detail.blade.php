@@ -3,7 +3,7 @@ title="{{$announcement->title}}"
 >
 
 <!-- Full Page Image Header with Vertically Centered Content -->
-<header class="masthead_detail mt-n5" style="background-image: url({{Storage::url($announcement->category->img)}});">
+<header class="masthead_detail" style="background-image: url({{Storage::url($announcement->category->img)}});">
   <div class="container h-100">
     <div class="row h-100 align-items-md-center">
       <div class="col-12 col-md-6 box_detail d-none d-md-block">
@@ -66,7 +66,7 @@ title="{{$announcement->title}}"
     <div class="container">
       <div class="row mb-3">
         <div class="col-12 col-md-3 mt-2">
-          <button class="btn btn-warning">Modifica il tuo annuncio</button>
+          <button class="btn btn-warning" data-toggle="modal" data-target="#updateModal" type="button" data-backdrop="static">Modifica il tuo annuncio</button>
         </div>
   
         <div class="col-12 col-md-3 mt-2">
@@ -99,5 +99,65 @@ title="{{$announcement->title}}"
         </div>
       </div>
     </div>
+
+    <!-- Button trigger modal -->
+{{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button> --}}
+
+<!-- Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">MODIFICA IL TUO ANNUNCIO</h5>
+        {{-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> --}}
+      </div>
+      <div class="modal-body">
+        {{-- INIZIO FORM --}}
+        <form action="{{route('announcement.update', $announcement)}}" method="POST">
+          @csrf
+          @method('PUT')
+          @if ($errors->any())
+          <div class="alert alert-danger">
+           <ul>
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+            </div>
+          @endif
+          <div class="form-group">
+              <label>{{__('ui.announcementTitle')}}</label>
+              <input type="text" name="title" class="form-control"  aria-describedby="titolo annuncio" value="{{$announcement->title}}">
+          </div>
+          <div class="form-group py-2">
+              <label>{{__('ui.announcementCategory')}}: </label>
+              <span>{{$announcement->category->name}}</span>
+          </div>
+          <div class="form-group">
+          <label>{{__('ui.announcementDescription')}}</label>
+          <textarea class="form-control" name="description" id="" cols="80" rows="10">{{$announcement->description}}</textarea>
+          </div>
+          <div class="form-group ">
+              <label>{{__('ui.announcementPrice')}}</label>
+              <div class="input-group">
+              <div class="input-group-prepend">
+                  <span class="input-group-text form-controlEuro">€</span>
+                </div>
+              <input type="number" name="price" class="form-control"  aria-describedby="prezzo annuncio" value="{{$announcement->price}}">
+          </div>
+          </div>
+        <button type="submit" class="btn btn-success" >Salva modifiche</button>
+      </form>
+      {{-- FINE FORM --}}
+      </div>
+      <div class="ml-3 mb-2">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Annulla modifiche</button>
+    </div>
+  </div>
+</div>
 
     </x-layout>

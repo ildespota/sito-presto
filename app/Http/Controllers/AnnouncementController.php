@@ -176,7 +176,26 @@ class AnnouncementController extends Controller
      */
     public function update(Request $request, Announcement $announcement)
     {
-        //
+        /* dd($request, $announcement); */
+        $updated_title = $request->title;
+        $updated_price = $request->price;
+        $updated_description = $request->description;
+
+        if($updated_description){
+            $announcement->description = $updated_description;
+        }
+
+        if($updated_price){
+            $announcement->price = $updated_price;
+        }
+
+        if($updated_title){
+            $announcement->title = $updated_title;
+        }
+
+        $announcement->save();
+
+        return redirect()->back();
     }
 
     /**
