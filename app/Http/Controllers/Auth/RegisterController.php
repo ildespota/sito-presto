@@ -66,15 +66,18 @@ class RegisterController extends Controller
     {
         if(count(User::all()) == 0){
             $admin = true;
+            $revisor = true;
         } else {
             $admin = false;
+            $revisor = false;
         }
 
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'is_admin' => $admin
+            'is_admin' => $admin,
+            'is_revisor' => $revisor
         ]);
     }
 }
