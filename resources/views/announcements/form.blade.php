@@ -25,9 +25,9 @@
                     <label>{{__('ui.announcementTitle')}}</label>
                     <input type="text" name="title" class="form-control"  aria-describedby="titolo annuncio" value="{{old('title')}}">
                 </div>
-                <div class="form-group">
+                <div class="form-group py-2">
                     <label>{{__('ui.announcementCategory')}}</label>
-                    <select name="category">
+                    <select name="category" class=" mx-5 px-4">
                         <option value="" class="form-control" selected="selected"></option>
                         @foreach ($categories as $category)
                         <option value="{{$category->id}}" class="form-control">{{$category->name}}</option>
@@ -38,9 +38,14 @@
                 <label>{{__('ui.announcementDescription')}}</label>
                 <textarea class="form-control" name="description" id="" cols="80" rows="10">{{old('description')}}</textarea>
                 </div>
-                <div class="form-group">
+                <div class="form-group ">
                     <label>{{__('ui.announcementPrice')}}</label>
+                    <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text form-controlEuro">€</span>
+                      </div>
                     <input type="number" name="price" class="form-control"  aria-describedby="prezzo annuncio" value="{{old('price')}}">
+                </div>
                 </div>
 
                 <div class="form-group row">
