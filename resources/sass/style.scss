@@ -12,11 +12,21 @@ body{
     color:var(--white);
 }
 
-/* #tornasu{
+ #tornasu{
     position: fixed;
-    top: 50%;
+    top: 80%;
     width: 100%;
-} */
+    right: 10px;
+    z-index:999;
+} 
+#tornasuMobile{
+    position: relative;
+    top: 10px;
+    width: 100%;
+    right: 10px;
+    z-index:999;
+} 
+
 
 html{
     scroll-behavior: smooth;
@@ -216,4 +226,7 @@ table{
 
 .descriptionRevisor {
 font-size: 15px;
+}
+.text-violet  {
+color: var(--violet);
 }

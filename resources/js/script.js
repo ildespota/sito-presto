@@ -1,6 +1,6 @@
 const { set } = require("lodash");
 
-/* window.addEventListener ("scroll",function(){
+ window.addEventListener ("scroll",function(){
 
    
 
@@ -24,7 +24,35 @@ if(tornaSu){
   
         $(window).scrollTop(0);
     }) 
-} */
+} 
+
+// torna su mobile 
+
+window.addEventListener ("scroll",function(){
+
+   
+
+  if (window.pageYOffset>200) {
+  document.getElementById("tornasuMobile").classList.add('visible');
+  document.getElementById("tornasuMobile").classList.remove('invisible');
+  }
+  
+  else if (window.pageYOffset<200) {
+  document.getElementById("tornasuMobile").classList.add('invisible');
+  document.getElementById("tornasuMobile").classList.remove('visible');
+  }
+  
+  
+},!1);
+
+let tornasuMobile = document.querySelector('#tornasuMobile');
+
+if(tornasuMobile){
+  tornasuMobile.addEventListener('click', function(){
+
+      $(window).scrollTop(0);
+  }) 
+} 
 
 
 /* carosello */
