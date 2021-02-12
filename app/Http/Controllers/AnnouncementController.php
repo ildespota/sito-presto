@@ -193,4 +193,12 @@ class AnnouncementController extends Controller
     public function thankyou(){
         return view('announcements.thankyou');
     }
+
+
+    public function userDestroyAnnouncement(Announcement $announcement){
+
+        $id = $announcement->deleteAnnouncement();
+        return redirect(route('home'));
+
+    }
 }
