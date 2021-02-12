@@ -8,7 +8,7 @@
                 @foreach ($users as $user)
                 <table class="table">
 
-                  <tr><span class="text-center h3">{{$user->name}}</span></tr>
+                  <tr><span class="text-center h3">{{$user->name}} <br> {{$user->email}}</span></tr>
                   <tr>
                       <th>Revisore</th>
                       <th>Rendi Revisore</th>
@@ -18,7 +18,7 @@
                       <th>Cancella Admin</th> --}}
                   </tr>
                   <tr>
-                      <td class="@if($user->is_revisor) bg-success @else bg-danger @endif"></td>
+                      <td class="@if($user->is_revisor) bg-success @else bg-danger @endif "></td>
                       <td>
                           <form action="{{route('make.revisor', $user->id)}}" method="POST">
                               @csrf

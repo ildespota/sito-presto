@@ -4,6 +4,10 @@
     --violet: rgb(97,104,250);
     --white: rgba(255,255,255);
 }
+body{
+    background-color: var(--white);
+
+}
 .text-white{
     color:var(--white);
 }
@@ -136,6 +140,14 @@ main{
     box-shadow: 5px 5px  0px var(--violet);
 }
 
+.form-controlEuro{
+    background-color: var(--violet);
+    color: var(--white);
+    border-radius: 0px;
+    border: 0px;
+    box-shadow: 5px 5px  0px var(--violet);
+}
+
 /* card */
 .card-box{
     padding: 10px;
@@ -183,7 +195,6 @@ main{
 .masthead_detail {
     height: 55vh;
     min-height: 300px;
-    background-image: url('/img/game.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -201,4 +212,8 @@ main{
 
 table{
     overflow-x: hidden;
+}
+
+.descriptionRevisor {
+font-size: 15px;
 }

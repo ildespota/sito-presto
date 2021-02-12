@@ -52,23 +52,7 @@ title="revisori"
                   @endif
         </div>
       </div>
-   {{--  <div class="row">
-        <div class="col-12">      
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{{$announcement->title}}</h5>
-                <p class="card-text">{{$announcement->description}}</p>
-                <p class="card-text">{{$announcement->price}}</p>
-                <p class="card-text">{{$announcement->created_at->format('d-m-Y')}}</p>
-                <p class="card-text">{{$announcement->category->name}}</p>
-                <p class="card-text">{{$announcement->user->name}}</p>
-                <a href="{{route('home')}}" class="btn btn-primary">Torna indietro</a>
-              </div>
-            </div>
-            
-            
-          </div>
-        </div> --}}
+   
         <div class="row mt-5">
             <div class="col-12 col-md-4 mb-4 mb-md-0">
                 <p class="card-text">Inserito il {{$announcement->created_at->format('d-m-Y')}}</p>
@@ -79,13 +63,13 @@ title="revisori"
                     <div class="col-12 col-md-6 my-3">
                         <form action="{{route('revisor.accept', $announcement->id)}}" method="POST">
                             @csrf
-                            <button type="submit" class="btn btn-success">Accetta</button>
+                            <button type="submit" class="btn btn-success  px-3 py-2 "><span class="h4">Accetta</span></button>
                         </form>
                     </div>
                     <div class="col-12 col-md-6 ml-auto my-3">
                         <form action="{{route('revisor.reject', $announcement->id)}}" method="POST">
                             @csrf
-                            <button type="submit" class="btn btn-danger">Rifiuta</button>
+                            <button type="submit" class="btn btn-danger px-3 py-2 "> <span class="h4">Rifiuta</span>  </button>
                         </form>
                     </div>
                </div>
@@ -95,7 +79,8 @@ title="revisori"
                 
             </div>
             <div class="col-12 col-md-8">
-              <p>{{$announcement->description}}</p>
+                <h5>Descrizione</h5>
+              <p class="descriptionRevisor">{{$announcement->description}}</p>
             </div>
         </div>
     </div>

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Models\Announcement;
 use COM;
+use App\Models\Category;
+use Illuminate\Support\Str;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -36,6 +37,7 @@ class HomeController extends Controller
 
     public function show(Announcement $announcement)
     {
+       /*  dd($announcement); */
         if($announcement->is_accepted)
         {
             return view('announcements.detail', compact('announcement')); 
@@ -61,7 +63,7 @@ class HomeController extends Controller
     public function search(Request $request){
 
         $q=$request->q;
-        $announcements=Announcement::search($q)->where('is_accepted', true)->get(); 
+        $announcements=Announcement::search($q)->where('is_accepted', true);
    
         return view('search_result', compact('announcements','q'));
     }
@@ -69,6 +71,7 @@ class HomeController extends Controller
     public function notallowed(){
         return view('revisor.notallowed');
     }
+
     public function locale($locale){
        
         session()->put('locale',$locale);

@@ -163,7 +163,7 @@
                     </tr>
                     @foreach ($users as $user)
                       <tr>
-                          <td>{{$user->name}}</td>
+                          <td>{{$user->name}} <br> {{$user->email}}</td>
                           <td class="@if($user->is_revisor) bg-success @else bg-danger @endif"></td>
                           <td>
                               <form action="{{route('make.revisor', $user->id)}}" method="POST">

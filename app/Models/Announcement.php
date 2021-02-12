@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Laravel\Scout\Searchable;
 use App\Models\AnnouncementImage;
 use Illuminate\Database\Eloquent\Model;
@@ -97,5 +98,23 @@ class Announcement extends Model
         }
         $this->delete();
         return $this->id;
+    }
+
+
+    public function url(){
+  
+        return route('announcement.show', [$this->id, Str::slug($this->title)]);
+    }
+
+    public function preview($description){
+
+        $description = strip_tags($description);
+
+        if(strlen($description) > 50){
+            $description = substr($description, 0, 50);
+            $description = $description." ... ";
+        }
+
+        return $description;
     }
 }

@@ -3,7 +3,7 @@ title="{{$announcement->title}}"
 >
 
 <!-- Full Page Image Header with Vertically Centered Content -->
-<header class="masthead_detail mt-n5">
+<header class="masthead_detail mt-n5" style="background-image: url({{Storage::url($announcement->category->img)}});">
   <div class="container h-100">
     <div class="row h-100 align-items-md-center">
       <div class="col-12 col-md-6 box_detail d-none d-md-block">

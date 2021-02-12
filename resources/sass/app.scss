@@ -7,8 +7,7 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-//Mio stile
-@import 'style';
+
 
 //font awesome
 @import '../../node_modules/@fortawesome/fontawesome-free/css/all';
@@ -18,3 +17,6 @@
 @import '~dropzone/dist/dropzone';
 
 @import '~flag-icon-css/sass/flag-icon';
+
+//Mio stile
+@import 'style';

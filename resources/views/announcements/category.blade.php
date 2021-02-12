@@ -7,12 +7,13 @@
       <x-card
       announcement="{{$announcement->id}}"
       title="{{$announcement->title}}"
-      description="{{$announcement->description}}"
       createdAt="{{$announcement->created_at->format('d-m-Y')}}"
       name="{{$announcement->category->name}}"
       price="{{$announcement->price}}"
       category="{{$announcement->category->id}}"
       image="{{$announcement->getCover()}}"
+      url="{{$announcement->url()}}"
+      description="{{$announcement->preview($announcement->description)}}"
 
       />
       

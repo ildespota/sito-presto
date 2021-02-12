@@ -10,10 +10,11 @@
           <p>{{$description}}</p>
           <p class="card-text">{{$createdAt}}</p>
           <a href= "{{route('announcement.category', $category )}}" class="card-text">{{$name}}</a>
-          <h5 class="lead">{{$price}}</h5>
+          <h5 class="lead">{{$price}} €</h5>
 
           <div class="col d-flex justify-content-end">
-          <a href="{{route('announcement.show', $announcement)}}" class="btn btn-custom2 rounded">{{__('ui.detail')}}</a>
+          <a href="{{$url}}" class="btn btn-custom2 rounded">{{__('ui.detail')}}</a>
+        {{--   {{dd($url)}} --}}
         </div> 
       </div>
     </div>
