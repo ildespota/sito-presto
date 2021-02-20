@@ -36,8 +36,10 @@ class AppServiceProvider extends ServiceProvider
        
        Paginator::useBootstrap();
 
-       $users = User::all();
-       View::share('users', $users);
+       if(Schema::hasTable('users')){
+        $users = User::all();
+         View::share('users', $users);
+    }
 
     }
 }
